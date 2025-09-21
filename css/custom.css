@@ -3749,6 +3749,20 @@ header.main-header .header-sticky.active{
 	height: 100%;
 }
 
+.page-catagery-list ul li.active a{
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.page-catagery-list ul li.active a::before{
+	color: var(--white-color);
+}
+
+.page-catagery-list ul li.active a::after{
+	top: 0;
+	height: 100%;
+}
+
 .sidebar-cta-box{
 	background: linear-gradient(90.15deg, var(--accent-color) 1.15%, var(--accent-secondary-color) 98.84%);
 	border-radius: 30px;
