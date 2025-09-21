@@ -1,0 +1,38 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="athenaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Athena Owl Symbol -->
+  <g transform="translate(10, 10)">
+    <!-- Owl Body -->
+    <ellipse cx="20" cy="25" rx="15" ry="20" fill="url(#athenaGradient)"/>
+    
+    <!-- Owl Eyes -->
+    <circle cx="15" cy="18" r="4" fill="white"/>
+    <circle cx="25" cy="18" r="4" fill="white"/>
+    <circle cx="15" cy="18" r="2" fill="#1d4ed8"/>
+    <circle cx="25" cy="18" r="2" fill="#1d4ed8"/>
+    
+    <!-- Owl Beak -->
+    <polygon points="20,22 18,26 22,26" fill="#f59e0b"/>
+    
+    <!-- Owl Ears -->
+    <polygon points="8,8 12,15 16,8" fill="url(#athenaGradient)"/>
+    <polygon points="24,8 28,15 32,8" fill="url(#athenaGradient)"/>
+    
+    <!-- Wing Details -->
+    <path d="M 8 25 Q 5 30 8 35 Q 12 32 15 30" stroke="#1e40af" stroke-width="1.5" fill="none"/>
+    <path d="M 32 25 Q 35 30 32 35 Q 28 32 25 30" stroke="#1e40af" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Company Name -->
+  <text x="55" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">ATHENA</text>
+  <text x="55" y="42" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">TECHNOLOGIES</text>
+  
+  <!-- Tagline -->
+  <text x="55" y="52" font-family="Arial, sans-serif" font-size="8" fill="#9ca3af">Wisdom in Technology</text>
+</svg>
