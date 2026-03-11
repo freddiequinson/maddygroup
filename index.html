@@ -32,6 +32,84 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<style>
+		/* Force navbar items into a horizontal row on desktop */
+		@media (min-width: 992px) {
+			.main-menu .navbar-nav {
+				flex-direction: row !important;
+				align-items: center !important;
+				flex-wrap: nowrap !important;
+			}
+			.main-menu .navbar-nav > .nav-item {
+				display: inline-flex !important;
+				align-items: center !important;
+				white-space: nowrap;
+			}
+			/* Keep dropdown submenus vertical */
+			.main-menu .navbar-nav > .nav-item > ul {
+				flex-direction: column !important;
+			}
+
+			/* Push nav links well away from the logo */
+			.main-menu {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: flex-end !important;
+				flex: 1;
+			}
+			.main-menu .nav-menu-wrapper {
+				margin-left: 80px !important;
+				flex: 1;
+				display: flex;
+				align-items: center;
+			}
+			.main-menu .navbar-nav {
+				margin-left: auto !important;
+			}
+		}
+
+		/* Push logo further left / away from nav links */
+		.navbar-brand {
+			margin-right: 0 !important;
+			padding-right: 0 !important;
+		}
+		@media (min-width: 992px) {
+			.main-menu .nav-menu-wrapper {
+				margin-left: 120px !important;
+			}
+		}
+
+		/* Force Get Started button text to stay horizontal */
+		.header-btn .btn-default {
+			writing-mode: horizontal-tb !important;
+			text-orientation: mixed !important;
+			white-space: nowrap !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			flex-direction: row !important;
+			letter-spacing: normal !important;
+		}
+
+		/* Fix nav dropdowns so long items never overflow the box */
+		@media (min-width: 992px) {
+			.main-menu .navbar-nav > .nav-item.submenu > ul {
+				min-width: 280px !important;
+				width: auto !important;
+				max-width: 340px !important;
+				white-space: normal !important;
+			}
+			.main-menu .navbar-nav > .nav-item.submenu > ul li a {
+				white-space: normal !important;
+				word-break: normal !important;
+				overflow-wrap: break-word !important;
+				display: block !important;
+				padding-top: 8px !important;
+				padding-bottom: 8px !important;
+				line-height: 1.4 !important;
+			}
+		}
+	</style>
 </head>
 <body>
 
@@ -103,7 +181,8 @@
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="./">Home</a></li>                                
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="services.html">Services</a>
+                                <!-- Services Dropdown -->
+                                <li class="nav-item submenu"><a class="nav-link" href="cybersecurity-services.html">Services</a>
                                     <ul>
                                         <li class="nav-item"><a class="nav-link" href="cybersecurity-services.html">Cybersecurity Services</a></li>
                                         <li class="nav-item"><a class="nav-link" href="software-development.html">Software Development</a></li>
@@ -111,6 +190,22 @@
                                         <li class="nav-item"><a class="nav-link" href="iot-services.html">IoT Services & Smart Cards</a></li>
                                         <li class="nav-item"><a class="nav-link" href="web-solutions.html">Web Solutions</a></li>
                                         <li class="nav-item"><a class="nav-link" href="ict-procurement.html">ICT Tools Procurement</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Technologies Dropdown -->
+                                <li class="nav-item submenu"><a class="nav-link" href="technologies.html">Technologies</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Security Assessment</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Penetration Testing as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Breach & Attack Simulation as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Phishing as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Vulnerability Management as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Identity as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Security Data Pipeline Services</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Insider Threat Solutions</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">CISO as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Data & Privacy Protection</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Cloud Security</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -147,7 +242,7 @@
         <!-- Video Start -->
         <div class="hero-bg-video">
             <!-- Selfhosted Video Start -->
-            <video autoplay muted loop id="myVideo"><source src="https://demo.awaikenthemes.com/assets/videos/proshield-video.mp4" type="video/mp4"></video>
+            <video autoplay muted loop id="myVideo"><source src="images/cyber1.mp4" type="video/mp4"></video>
         </div>
         <!-- Video End -->
         <div class="container">
@@ -199,7 +294,7 @@
                         <!-- About Image Box Start -->
                         <div class="about-image-box about-img-1">
                             <figure class="image-anime reveal">
-                                <img src="images/about-image-1.jpg" alt="">
+                                <img src="images/dev6.jpg" alt="">
                             </figure>
                         </div>
                         <!-- About Image Box End -->
@@ -208,13 +303,13 @@
                         <div class="about-image-box">
                             <div class="about-img-2">
                                 <figure class="image-anime reveal">
-                                    <img src="images/about-image-2.jpg" alt="">
+                                    <img src="images/cyber1.jpg" alt="">
                                 </figure>
                             </div>
 
                             <div class="about-img-3">
                                 <figure class="image-anime reveal">
-                                    <img src="images/about-image-3.jpg" alt="">
+                                    <img src="images/cyber4.jpg" alt="">
                                 </figure>
                             </div>
                         </div>
@@ -247,7 +342,7 @@
                             <!-- About Us Body Image Start -->
                             <div class="about-us-body-img">
                                 <figure class="image-anime">
-                                    <img src="images/about-body-img.png" alt="">
+                                    <img src="images/dev1.jpg" alt="">
                                 </figure>
                             </div>
                             <!-- About Us Body Image End -->
@@ -611,15 +706,15 @@
 </style>
 
 <script>
-    // Enhanced Partnership Carousel with 1-second interval and content visibility fix
+    // Enhanced Partnership Carousel - faster interval for consistent speed on all devices
     document.addEventListener('DOMContentLoaded', function() {
         const slides = document.querySelectorAll('.partnership-slide');
         const indicators = document.querySelectorAll('.indicator-dot');
         let currentSlide = 0;
         let autoRotateInterval;
+        const CAROUSEL_INTERVAL = 2000;
         
         function showSlide(index) {
-            // Remove active class from all slides and indicators
             slides.forEach(slide => {
                 slide.classList.remove('active');
             });
@@ -627,14 +722,11 @@
                 indicator.classList.remove('active');
             });
             
-            // Force a reflow to ensure content is properly rendered
             void slides[index].offsetWidth;
             
-            // Add active class to current slide and indicator
             slides[index].classList.add('active');
             indicators[index].classList.add('active');
             
-            // Force content visibility and reflow
             setTimeout(() => {
                 const activeSlide = slides[index];
                 const mediaBox = activeSlide.querySelector('.partnership-media-box');
@@ -650,7 +742,6 @@
                     content.style.visibility = 'visible';
                 }
                 
-                // Trigger video play if it's a video element
                 const video = activeSlide.querySelector('video');
                 if (video) {
                     video.play().catch(e => console.log('Video autoplay prevented:', e));
@@ -664,42 +755,33 @@
         }
         
         function startAutoRotate() {
-            
-            autoRotateInterval = setInterval(nextSlide, 4000);
+            autoRotateInterval = setInterval(nextSlide, CAROUSEL_INTERVAL);
         }
         
         function stopAutoRotate() {
             clearInterval(autoRotateInterval);
         }
         
-        
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', function() {
                 stopAutoRotate();
                 currentSlide = index;
                 showSlide(currentSlide);
-                
-                // Restart auto-rotation after manual click
                 setTimeout(() => {
                     startAutoRotate();
                 }, 100);
             });
         });
         
-        // Initialize first slide
         showSlide(0);
-        
-        // Start auto-rotation
         startAutoRotate();
         
-        // Pause on hover
         const carouselWrapper = document.querySelector('.partnership-carousel-wrapper');
         if (carouselWrapper) {
             carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
             carouselWrapper.addEventListener('mouseleave', startAutoRotate);
         }
         
-        // Ensure content is visible on page load
         window.addEventListener('load', function() {
             showSlide(currentSlide);
         });
@@ -938,7 +1020,7 @@
                         <!-- Feature Image Start -->
                         <div class="feature-image">
                             <figure class="image-anime reveal">
-                                <img src="images/feature-image-1.jpg" alt="">
+                                <img src="images/dev7.jpg" alt="">
                             </figure>
                         </div>
                         <!-- Feature Image End -->
@@ -948,7 +1030,7 @@
                             <!-- Feature Image Start -->
                             <div class="feature-image">
                                 <figure class="image-anime reveal">
-                                    <img src="images/feature-image-2.jpg" alt="">
+                                    <img src="images/cyber2.jpg" alt="">
                                 </figure>
                             </div>
                             <!-- Feature Image End -->
@@ -967,7 +1049,7 @@
                                     <!-- Client Image Start -->
                                     <div class="client-image">
                                         <figure class="image-anime">
-                                            <img src="images/client-image-1.jpg" alt="">
+                                            <img src="images/client1.jpg" alt="">
                                         </figure>
                                     </div>
                                     <!-- Client Image End -->
@@ -975,7 +1057,7 @@
                                     <!-- Client Image Start -->
                                     <div class="client-image">
                                         <figure class="image-anime">
-                                            <img src="images/client-image-2.jpg" alt="">
+                                            <img src="images/client2.jpg" alt="">
                                         </figure>
                                     </div>
                                     <!-- Client Image End -->
@@ -983,7 +1065,7 @@
                                     <!-- Client Image Start -->
                                     <div class="client-image">
                                         <figure class="image-anime">
-                                            <img src="images/client-image-3.jpg" alt="">
+                                            <img src="images/client3.jpg" alt="">
                                         </figure>
                                     </div>
                                     <!-- Client Image End -->
@@ -1085,7 +1167,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-1.jpg" alt="">
+                                            <img src="images/cyber3.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -1101,7 +1183,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-2.jpg" alt="">
+                                            <img src="images/dev7.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -1117,7 +1199,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-3.jpg" alt="">
+                                            <img src="images/dev5.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -1133,7 +1215,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-4.jpg" alt="">
+                                            <img src="images/dev2.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -1167,7 +1249,7 @@
                     <!-- Why Choose Image Start -->
                     <div class="why-choose-image">
                         <figure class="image-anime reveal">
-                            <img src="images/why-choose-image.jpg" alt="">
+                            <img src="images/why-choose-us2.webp" alt="">
                         </figure>
                     </div>
                     <!-- Why Choose Image End -->
@@ -1393,7 +1475,7 @@
                         <!-- Security Image Start -->
                         <div class="security-image order-lg-1 order-2">
                             <figure class="image-anime reveal">
-                                <img src="images/our-security-image.jpg" alt="">
+                                <img src="images/identity.webp" alt="">
                             </figure>
                         </div>
                         <!-- Security Image End -->
@@ -1459,7 +1541,6 @@
                         <!-- Pricing Header Start -->
                         <div class="pricing-header">
                             <h3>Security Assessment</h3>
-                            <!-- <h2>Call for Quote</h2> -->
                             <p>Comprehensive security evaluation and recommendations.</p>
 
                             <div class="icon-box">
@@ -1498,7 +1579,6 @@
                         <!-- Pricing Header Start -->
                         <div class="pricing-header">
                             <h3>Managed SOC Services</h3>
-                            <!-- <h2>Call for Quote</h2> -->
                             <p>24/7 security monitoring and threat response.</p>
 
                             <div class="icon-box">
@@ -1537,7 +1617,6 @@
                         <!-- Pricing Header Start -->
                         <div class="pricing-header">
                             <h3>Virtual CISO</h3>
-                            <!-- <h2>Call for Quote</h2> -->
                             <p>Strategic cybersecurity leadership and governance.</p>
 
                             <div class="icon-box">
@@ -1803,7 +1882,7 @@
                         <div class="team-image">
                             <a href="team-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/team-3.jpg" alt="">
+                                    <img src="images/team5.jpg" alt="">
                                 </figure>
                             </a>
 
@@ -1821,8 +1900,8 @@
 
                         <!-- Team Content Start -->
                         <div class="team-content">
-                            <h3><a href="team-single.html">michael brown</a></h3>
-                            <p>incident response</p>
+                            <h3><a href="team-single.html">Richard Acheampong</a></h3>
+                            <p>Software/AI Engineer</p>
                         </div>
                         <!-- Team Content End -->
                     </div>
@@ -1836,7 +1915,7 @@
                         <div class="team-image">
                             <a href="team-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/team-4.jpg" alt="">
+                                    <img src="images/rams1.jpg" alt="">
                                 </figure>
                             </a>
 
@@ -1854,8 +1933,8 @@
 
                         <!-- Team Content Start -->
                         <div class="team-content">
-                            <h3><a href="team-single.html">isabella moore</a></h3>
-                            <p>security awareness</p>
+                            <h3><a href="team-single.html">Godwin Mensah</a></h3>
+                            <p>DevOps Engineer</p>
                         </div>
                         <!-- Team Content End -->
                     </div>
@@ -1914,7 +1993,7 @@
                         <!-- CTA Box Image Start -->
                         <div class="cta-box-image">
                             <figure class="image-anime reveal">
-                                <img src="images/cta-box-image.jpg" alt="">
+                                <img src="images/cyber16.jpg" alt="">
                             </figure>
                         </div>
                         <!-- CTA Box Image End -->
@@ -1943,7 +2022,7 @@
                         <!-- Faqs Image Start -->
                         <div class="faq-image">
                             <figure class="image-anime reveal">
-                                <img src="images/faq-image.jpg" alt="">
+                                <img src="images/cyber14.webp" alt="">
                             </figure>
                         </div>
                         <!-- Faqs Image End -->
@@ -2042,7 +2121,7 @@
                         <div class="post-featured-image">
                             <a href="blog-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/post-1.jpg" alt="">
+                                    <img src="images/cyber11.jpeg" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -2074,7 +2153,7 @@
                         <div class="post-featured-image">
                             <a href="blog-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/post-2.jpg" alt="">
+                                    <img src="images/cyber12.jpg" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -2106,7 +2185,7 @@
                         <div class="post-featured-image">
                             <a href="blog-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/post-3.jpg" alt="">
+                                    <img src="images/cyber15.jpg" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -2185,8 +2264,9 @@
                         <ul>
                             <li><a href="index.html">home</a></li>
                             <li><a href="about.html">about us</a></li>
-                            <li><a href="services.html">services</a></li>
-                            <li><a href="blog-single.html">blog</a></li>
+                            <li><a href="cybersecurity-services.html">services</a></li>
+                            <li><a href="technologies.html">technologies</a></li>
+                            <li><a href="blog.html">blog</a></li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->

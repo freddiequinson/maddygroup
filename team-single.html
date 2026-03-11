@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="Meet the expert team at Maddy Group Ltd - Ghana's leading technology solutions provider">
+	<meta name="keywords" content="Maddy Group Ltd team, technology experts Ghana, cybersecurity professionals">
+	<meta name="author" content="Maddy Group Ltd">
+	<title>Our Team - Maddy Group Ltd Technology Solutions Ghana</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/maddylogo.jpg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/slicknav.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link href="css/all.min.css" rel="stylesheet" media="screen">
+	<link href="css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/mousecursor.css">
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<style>
+		/* ===== TEAM PAGE CUSTOM STYLES ===== */
+		/* Matches index.html color scheme exactly */
+
+		/* Page Header - dark/navy from index.html why-choose-us section */
+		.page-header.team-header {
+			background: linear-gradient(rgba(10, 15, 40, 0.82), rgba(10, 15, 40, 0.88)),
+						url('images/client2.jpg') center center/cover no-repeat;
+			min-height: 340px;
+			display: flex;
+			align-items: center;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.page-header.team-header::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: var(--primary-color, #e84917);
+		}
+
+		/* ===== TEAM GRID SECTION ===== */
+		.team-page-section {
+			padding: 80px 0 60px;
+			background: #f6f7fb;
+		}
+
+		/* ===== TEAM MEMBER CARD ===== */
+		.team-member-card {
+			background: #ffffff;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+			transition: transform 0.35s ease, box-shadow 0.35s ease;
+			margin-bottom: 30px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.team-member-card:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.13);
+		}
+
+		/* Image container — fixed height, face visible via top positioning */
+		.team-card-image {
+			position: relative;
+			overflow: hidden;
+			height: 260px;
+			background: #e9eaf0;
+			flex-shrink: 0;
+		}
+
+		.team-card-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top; /* shows face/head */
+			transition: transform 0.5s ease;
+			display: block;
+		}
+
+		.team-member-card:hover .team-card-image img {
+			transform: scale(1.05);
+		}
+
+		/* Overlay on hover — uses index.html dark navy */
+		.team-card-overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to top, rgba(10, 15, 40, 0.78) 0%, transparent 55%);
+			opacity: 0;
+			transition: opacity 0.35s ease;
+			display: flex;
+			align-items: flex-end;
+			padding: 20px;
+		}
+
+		.team-member-card:hover .team-card-overlay {
+			opacity: 1;
+		}
+
+		.team-social-quick {
+			display: flex;
+			gap: 10px;
+		}
+
+		.team-social-quick a {
+			width: 36px;
+			height: 36px;
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.18);
+			backdrop-filter: blur(6px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #ffffff;
+			font-size: 14px;
+			transition: background 0.25s ease, transform 0.25s ease;
+			border: 1px solid rgba(255, 255, 255, 0.25);
+			text-decoration: none;
+		}
+
+		.team-social-quick a:hover {
+			background: var(--primary-color, #e84917);
+			border-color: var(--primary-color, #e84917);
+			transform: translateY(-2px);
+			color: #fff;
+		}
+
+		/* Card body */
+		.team-card-content {
+			padding: 24px 24px 22px;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.team-card-header {
+			margin-bottom: 14px;
+		}
+
+		.team-card-header h3 {
+			font-size: 20px;
+			font-weight: 700;
+			color: #0d1128;
+			margin: 0 0 8px;
+			line-height: 1.2;
+		}
+
+		/* Position badge — uses index.html primary accent (orange/red) */
+		.team-position-badge {
+			display: inline-block;
+			padding: 4px 14px;
+			background: var(--primary-color, #e84917);
+			color: #ffffff;
+			border-radius: 30px;
+			font-size: 12px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.6px;
+		}
+
+		/* Bio */
+		.team-card-bio {
+			margin: 12px 0 16px;
+		}
+
+		.team-card-bio p {
+			color: #6b7280;
+			font-size: 14px;
+			line-height: 1.65;
+			margin: 0;
+		}
+
+		/* Info list */
+		.team-info-list {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 16px;
+			border-top: 1px solid #f0f1f5;
+			border-bottom: 1px solid #f0f1f5;
+			padding: 12px 0;
+		}
+
+		.team-info-list li {
+			display: flex;
+			align-items: center;
+			padding: 6px 0;
+			font-size: 13px;
+			color: #6b7280;
+			gap: 10px;
+		}
+
+		.team-info-list li .info-icon {
+			width: 28px;
+			height: 28px;
+			border-radius: 7px;
+			/* uses dark navy from index.html "why choose us" background */
+			background: #0d1128;
+			color: #ffffff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			flex-shrink: 0;
+		}
+
+		.team-info-list li strong {
+			color: #0d1128;
+			font-weight: 600;
+			min-width: 90px;
+			font-size: 13px;
+		}
+
+		/* Skill tags */
+		.team-skills {
+			margin-top: 14px;
+		}
+
+		.team-skills h4 {
+			font-size: 13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.6px;
+			color: #0d1128;
+			margin-bottom: 10px;
+		}
+
+		.skill-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 7px;
+		}
+
+		.skill-tag {
+			padding: 5px 12px;
+			background: #f0f1f5;
+			border-radius: 20px;
+			font-size: 12px;
+			color: #374151;
+			font-weight: 500;
+			transition: background 0.2s ease, color 0.2s ease;
+			border: 1px solid #e5e7eb;
+		}
+
+		.skill-tag:hover {
+			background: #0d1128;
+			color: #ffffff;
+			border-color: #0d1128;
+		}
+
+		/* why-choose-us counter list spacing fix for page context */
+		.why-choose-us {
+			margin-bottom: 40px;
+		}
+
+		/* Section intro */
+		.team-intro {
+			padding: 70px 0 40px;
+			background: #f6f7fb;
+		}
+
+		/* Scroll-in animation */
+		.fade-up {
+			opacity: 0;
+			transform: translateY(28px);
+			transition: opacity 0.6s ease, transform 0.6s ease;
+		}
+
+		.fade-up.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.delay-1 { transition-delay: 0.08s; }
+		.delay-2 { transition-delay: 0.16s; }
+		.delay-3 { transition-delay: 0.24s; }
+		.delay-4 { transition-delay: 0.32s; }
+
+		/* Responsive */
+		@media (max-width: 991px) {
+			.team-bottom-cta {
+				flex-direction: column;
+				padding: 40px 30px;
+				text-align: center;
+			}
+
+			.cta-contact-row {
+				justify-content: center;
+			}
+
+			.team-card-image {
+				height: 230px;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.team-card-image {
+				height: 210px;
+			}
+
+			.team-card-content {
+				padding: 18px 18px 16px;
+			}
+
+			.cta-left h2 {
+				font-size: 22px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+	<!-- Topbar Section Start -->
+	<div class="topbar">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-7">
+					<div class="topbar-info-text">
+						<p>We are always ready to protect your data <a href="contact.html">Contact now</a></p>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="topbar-links">
+						<div class="topbar-contact-info">
+							<ul>
+								<li><a href="#">Help</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+						<div class="topbar-social-links">
+							<ul>
+								<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+								<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Topbar Section End -->
+
+	<!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<a class="navbar-brand" href="./" style="display: flex; align-items: center; gap: 12px;">
+						<img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
+						<span style="font-size: 20px; font-weight: 700; color: #000; white-space: nowrap;">Maddy Group Ltd</span>
+					</a>
+
+					<div class="collapse navbar-collapse main-menu">
+						<div class="nav-menu-wrapper">
+							<ul class="navbar-nav mr-auto" id="menu">
+								<li class="nav-item"><a class="nav-link" href="./">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+								<li class="nav-item submenu"><a class="nav-link" href="services.html">Services</a>
+									<ul>
+										<li class="nav-item"><a class="nav-link" href="cybersecurity-services.html">Cybersecurity Services</a></li>
+										<li class="nav-item"><a class="nav-link" href="software-development.html">Software Development</a></li>
+										<li class="nav-item"><a class="nav-link" href="website-development.html">Website Development</a></li>
+										<li class="nav-item"><a class="nav-link" href="iot-services.html">IoT Services & Smart Cards</a></li>
+										<li class="nav-item"><a class="nav-link" href="web-solutions.html">Web Solutions</a></li>
+										<li class="nav-item"><a class="nav-link" href="ict-procurement.html">ICT Tools Procurement</a></li>
+									</ul>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+								<li class="nav-item submenu"><a class="nav-link" href="#">Resources</a>
+									<ul>
+										<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+										<li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+										<li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+										<li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+										<li class="nav-item"><a class="nav-link" href="blog-single.html">Case Studies</a></li>
+									</ul>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+						<div class="header-btn">
+							<a href="contact.html" class="btn-default">get started</a>
+						</div>
+					</div>
+					<div class="navbar-toggle"></div>
+				</div>
+			</nav>
+			<div class="responsive-menu"></div>
+		</div>
+	</header>
+	<!-- Header End -->
+
+	<!-- Page Header -->
+	<div class="page-header team-header">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-12">
+					<div class="page-header-box">
+						<h1 class="wow fadeInUp" data-cursor="-opaque" style="color: #ffffff;">Meet Our Expert Team</h1>
+						<nav class="wow fadeInUp" data-wow-delay="0.2s">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="./" style="color: rgba(255,255,255,0.75);">home</a></li>
+								<li class="breadcrumb-item active" style="color: #ffffff;">our team</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Page Header End -->
+
+	<!-- Section Title -->
+	<div class="team-intro">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title text-center">
+						<h3 class="wow fadeInUp">Expert team</h3>
+						<h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">The brilliant minds behind <span>Maddy Group Ltd</span></h2>
+						<p class="wow fadeInUp" data-wow-delay="0.4s" style="max-width: 620px; margin: 16px auto 0; color: #666; font-size: 15px;">Certified professionals with decades of combined experience in cybersecurity, software development, and digital innovation — serving Ghana and beyond.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team Cards -->
+	<div class="team-page-section">
+		<div class="container">
+			<div class="row">
+
+				<!-- Card 1: Dunstan Guba -->
+				<div class="col-lg-3 col-md-6">
+					<div class="team-member-card fade-up delay-1">
+						<div class="team-card-image">
+							<img src="images/team-1.jpg" alt="Dunstan Guba">
+							<div class="team-card-overlay">
+								<div class="team-social-quick">
+									<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+									<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+									<a href="mailto:dunstan@maddygroupltd.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-card-content">
+							<div class="team-card-header">
+								<h3>Dunstan Guba</h3>
+								<span class="team-position-badge">VAPT / Digital Forensics</span>
+							</div>
+							<div class="team-card-bio">
+								<p>Leading cybersecurity specialist with expertise in penetration testing, vulnerability assessments, and digital forensics for Ghanaian enterprises.</p>
+							</div>
+							<ul class="team-info-list">
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-certificate"></i></span>
+									<strong>Certs:</strong> CEH, OSCP, CHFI
+								</li>
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-briefcase"></i></span>
+									<strong>Exp:</strong> 8+ Years
+								</li>
+							</ul>
+							<div class="team-skills">
+								<h4>Expertise</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">Pen Testing</span>
+									<span class="skill-tag">VAPT</span>
+									<span class="skill-tag">Digital Forensics</span>
+									<span class="skill-tag">Incident Response</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 2: Fredrick Agyare -->
+				<div class="col-lg-3 col-md-6">
+					<div class="team-member-card fade-up delay-2">
+						<div class="team-card-image">
+							<img src="images/team-1.webp" alt="Fredrick Agyare">
+							<div class="team-card-overlay">
+								<div class="team-social-quick">
+									<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+									<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+									<a href="mailto:fredrick@maddygroupltd.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-card-content">
+							<div class="team-card-header">
+								<h3>Fredrick Agyare</h3>
+								<span class="team-position-badge">Cloud Engineer</span>
+							</div>
+							<div class="team-card-bio">
+								<p>Cloud infrastructure architect specialising in AWS, Azure, and Google Cloud — designing scalable, secure systems for Ghana's digital transformation.</p>
+							</div>
+							<ul class="team-info-list">
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-certificate"></i></span>
+									<strong>Certs:</strong> AWS SAA, Azure Expert
+								</li>
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-briefcase"></i></span>
+									<strong>Exp:</strong> 6+ Years
+								</li>
+							</ul>
+							<div class="team-skills">
+								<h4>Expertise</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">AWS</span>
+									<span class="skill-tag">Azure</span>
+									<span class="skill-tag">Kubernetes</span>
+									<span class="skill-tag">Infrastructure as Code</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 3: Richard Acheampong -->
+				<div class="col-lg-3 col-md-6">
+					<div class="team-member-card fade-up delay-3">
+						<div class="team-card-image">
+							<img src="images/team5.jpg" alt="Richard Acheampong">
+							<div class="team-card-overlay">
+								<div class="team-social-quick">
+									<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+									<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+									<a href="mailto:richard@maddygroupltd.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-card-content">
+							<div class="team-card-header">
+								<h3>Richard Acheampong</h3>
+								<span class="team-position-badge">Software / AI Engineer</span>
+							</div>
+							<div class="team-card-bio">
+								<p>Innovative developer and AI specialist building intelligent solutions that combine cutting-edge machine learning with real-world business applications.</p>
+							</div>
+							<ul class="team-info-list">
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-certificate"></i></span>
+									<strong>Certs:</strong> ML Engineer, Full Stack
+								</li>
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-briefcase"></i></span>
+									<strong>Exp:</strong> 7+ Years
+								</li>
+							</ul>
+							<div class="team-skills">
+								<h4>Expertise</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">Python</span>
+									<span class="skill-tag">Machine Learning</span>
+									<span class="skill-tag">React</span>
+									<span class="skill-tag">AI Development</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 4: Isabella Moore -->
+				<div class="col-lg-3 col-md-6">
+					<div class="team-member-card fade-up delay-4">
+						<div class="team-card-image">
+							<img src="images/rams1.jpg" alt="Godwin Mensah">
+							<div class="team-card-overlay">
+								<div class="team-social-quick">
+									<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+									<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+									<a href="mailto:godwin@maddygroupltd.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-card-content">
+							<div class="team-card-header">
+								<h3>Godwin Mensah</h3>
+								<span class="team-position-badge">DevOps Engineer</span>
+							</div>
+							<div class="team-card-bio">
+								<p>DevOps engineer with expertise in CI/CD pipelines, infrastructure automation, and cloud deployment strategies.</p>
+							</div>
+							<ul class="team-info-list">
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-certificate"></i></span>
+									<strong>Certs:</strong> Security+, CISSP
+								</li>
+								<li>
+									<span class="info-icon"><i class="fa-solid fa-briefcase"></i></span>
+									<strong>Exp:</strong> 5+ Years
+								</li>
+							</ul>
+							<div class="team-skills">
+								<h4>Expertise</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">DevOps</span>
+									<span class="skill-tag">CI/CD</span>
+									<span class="skill-tag">Infrastructure Automation</span>
+									<span class="skill-tag">Cloud Deployment</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</div>
+	<!-- Team Cards End -->
+
+    <!-- Why Choose Us Section Start -->
+    <div class="why-choose-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Why Choose Image Start -->
+                    <div class="why-choose-image">
+                        <figure class="image-anime reveal">
+                            <img src="images/why-choose-us2.webp" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Why Choose Content Start -->
+                    <div class="why-choose-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title dark-section">
+                            <h3 class="wow fadeInUp">why choose us</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Reliable solutions for technology excellence</h2>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Why Choose List Start -->
+                        <div class="why-choose-list">
+                            <!-- Why Choose Item Start -->
+                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="icon-box">
+                                    <img src="images/icon-why-choose-1.svg" alt="">
+                                </div>
+                                <div class="why-choose-item-content">
+                                    <h3>expertise and experience</h3>
+                                    <p>A team of seasoned technology professionals with extensive industry knowledge.</p>
+                                </div>
+                            </div>
+                            <!-- Why Choose Item End -->
+
+                            <!-- Why Choose Item Start -->
+                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="icon-box">
+                                    <img src="images/icon-why-choose-2.svg" alt="">
+                                </div>
+                                <div class="why-choose-item-content">
+                                    <h3>proactive security approach</h3>
+                                    <p>Focused on preventing threats before they impact your system, not just reacting after the fact.</p>
+                                </div>
+                            </div>
+                            <!-- Why Choose Item End -->
+
+                            <!-- Why Choose Item Start -->
+                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.8s">
+                                <div class="icon-box">
+                                    <img src="images/icon-why-choose-3.svg" alt="">
+                                </div>
+                                <div class="why-choose-item-content">
+                                    <h3>tailored training programs</h3>
+                                    <p>Educating your team on security best practices to reduce human error and enhance vigilance.</p>
+                                </div>
+                            </div>
+                            <!-- Why Choose Item End -->
+                        </div>
+                        <!-- Why Choose List End -->
+                    </div>
+                    <!-- Why Choose Content End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Why Choose Counter List Start -->
+                    <div class="why-choose-counter-list">
+                        <!-- Why Choose Counter Item Start -->
+                        <div class="why-choose-counter-item">
+                            <div class="icon-box">
+                                <img src="images/icon-why-choose-counter-1.svg" alt="">
+                            </div>
+                            <div class="why-choose-counter-content">
+                                <h3><span class="counter">25</span>+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Counter Item End -->
+
+                        <!-- Why Choose Counter Item Start -->
+                        <div class="why-choose-counter-item">
+                            <div class="icon-box">
+                                <img src="images/icon-why-choose-counter-2.svg" alt="">
+                            </div>
+                            <div class="why-choose-counter-content">
+                                <h3><span class="counter">15</span>K</h3>
+                                <p>project complete</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Counter Item End -->
+
+                        <!-- Why Choose Counter Item Start -->
+                        <div class="why-choose-counter-item">
+                            <div class="icon-box">
+                                <img src="images/icon-why-choose-counter-3.svg" alt="">
+                            </div>
+                            <div class="why-choose-counter-content">
+                                <h3><span class="counter">16</span>K</h3>
+                                <p>customer happy</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Counter Item End -->
+
+                        <!-- Why Choose Counter Item Start -->
+                        <div class="why-choose-counter-item">
+                            <div class="icon-box">
+                                <img src="images/icon-why-choose-counter-4.svg" alt="">
+                            </div>
+                            <div class="why-choose-counter-content">
+                                <h3><span class="counter">120</span></h3>
+                                <p>winning awards</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Counter Item End -->
+                    </div>
+                    <!-- Why Choose Counter List End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us Section End -->
+
+	<!-- Main Footer Section Start -->
+	<footer class="main-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer-header">
+						<div class="footer-logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;">
+							<img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
+							<span style="font-size: 24px; font-weight: 700; color: #fff;">Maddy Group Ltd</span>
+						</div>
+						<div class="footer-social-links">
+							<ul>
+								<li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+								<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+								<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="footer-links footer-newsletter-form">
+						<h3>Subscribe our newsletter:</h3>
+						<p>Stay updated with the latest cybersecurity insights and threats affecting Ghanaian businesses.</p>
+						<form id="newsletterForm" action="#" method="POST">
+							<div class="form-group">
+								<input type="email" name="email" class="form-control" id="mail" placeholder="Enter Your Email" required="">
+								<button type="submit" class="newsletter-btn"><i class="fa-regular fa-paper-plane"></i></button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-3 col-6">
+					<div class="footer-links footer-quick-links">
+						<h3>Quick link</h3>
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li><a href="about.html">about us</a></li>
+							<li><a href="services.html">services</a></li>
+							<li><a href="blog-single.html">blog</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-3 col-6">
+					<div class="footer-links">
+						<h3>Services</h3>
+						<ul>
+							<li><a href="cybersecurity-services.html">Cybersecurity Services</a></li>
+							<li><a href="software-development.html">Software Development</a></li>
+							<li><a href="website-development.html">Website Development</a></li>
+							<li><a href="iot-services.html">IoT Services & Smart Cards</a></li>
+							<li><a href="web-solutions.html">Web Solutions</a></li>
+							<li><a href="ict-procurement.html">ICT Tools Procurement</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-3 col-6">
+					<div class="footer-links">
+						<h3>Support</h3>
+						<ul>
+							<li><a href="#">Help</a></li>
+							<li><a href="#">Term's & condition</a></li>
+							<li><a href="#">Privacy policy</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-3 col-6">
+					<div class="footer-links">
+						<h3>Contact</h3>
+						<ul>
+							<li><a href="tel:0551111551">0551111551</a></li>
+							<li><a href="mailto:info@maddygroupltd.com">info@maddygroupltd.com</a></li>
+							<li>GD-219-3654, Adjetey Mensah Owusu St, Adjiriganor, Accra, Ghana</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="footer-copyright-text">
+							<p>Copyright © 2025 Maddy Group Ltd. All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Main Footer Section End -->
+
+	<!-- Scripts -->
+	<script src="js/jquery-3.7.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validator.min.js"></script>
+	<script src="js/jquery.slicknav.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/SmoothScroll.js"></script>
+	<script src="js/parallaxie.js"></script>
+	<script src="js/gsap.min.js"></script>
+	<script src="js/magiccursor.js"></script>
+	<script src="js/SplitText.js"></script>
+	<script src="js/ScrollTrigger.min.js"></script>
+	<script src="js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/function.js"></script>
+
+	<!-- Preloader Failsafe: force-hide after 2s in case any asset stalls -->
+	<script>
+		(function() {
+			function hidePreloader() {
+				var preloader = document.querySelector('.preloader');
+				if (preloader) {
+					preloader.style.transition = 'opacity 0.4s ease';
+					preloader.style.opacity = '0';
+					setTimeout(function() {
+						preloader.style.display = 'none';
+					}, 400);
+				}
+			}
+			// Hide as soon as DOM + assets are ready
+			window.addEventListener('load', function() {
+				setTimeout(hidePreloader, 200);
+			});
+			// Hard failsafe: force-hide after 2 seconds no matter what
+			setTimeout(hidePreloader, 2000);
+		})();
+
+		// Scroll-in animation observer
+		var observer = new IntersectionObserver(function(entries) {
+			entries.forEach(function(entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.querySelectorAll('.fade-up').forEach(function(el) {
+				observer.observe(el);
+			});
+		});
+	</script>
+</body>
+</html>
