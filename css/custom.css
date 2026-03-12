@@ -831,7 +831,6 @@ header.main-header .header-sticky.active{
 
 .hero{
 	position: relative;
-	
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -853,7 +852,6 @@ header.main-header .header-sticky.active{
 
 .hero.hero-video{
 	padding: 205px 0;
-	 background: #000;
 }
 
 .hero.hero-video .hero-bg-video{
@@ -5650,6 +5648,7 @@ header.main-header .header-sticky.active{
 
 	.hero.hero-video{
 		padding: 120px 0;
+		 background: #000;
 	}
 
 	.hero.hero-slider-layout .hero-slide{

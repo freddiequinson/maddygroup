@@ -20,6 +20,21 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<style>
+		.page-header {
+			transition: opacity 0.4s ease-in-out;
+			position: relative;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			padding: 145px 0;
+		}
+		.page-header-box {
+			position: relative;
+			z-index: 1;
+		}
+	</style>
 </head>
 <body>
 
@@ -109,17 +124,17 @@
 		</div>
 	</header>
 
-    <div class="page-header parallaxie">
+    <div class="page-header parallaxie" id="servicePageHero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="page-header-box">
-                        <h1 class="wow fadeInUp" data-cursor="-opaque">Software Development</h1>
+                        <h1 class="wow fadeInUp" id="heroTitle" data-cursor="-opaque">Software Development</h1>
                         <nav class="wow fadeInUp" data-wow-delay="0.2s">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="./">home</a></li>
                                 <li class="breadcrumb-item"><a href="cybersecurity-services.html">services</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Software Development</li>
+                                <li class="breadcrumb-item active" aria-current="page" id="heroBreadcrumb">Software Development</li>
                             </ol>
                         </nav>
                     </div>
@@ -136,13 +151,13 @@
                         <div class="page-catagery-list wow fadeInUp">
                             <h3>services category</h3>
                             <ul>
-                                <li><a href="cybersecurity-services.html">Cybersecurity Services</a></li>
-                                <li class="active"><a href="software-development.html">Software Development</a></li>
-                                <li><a href="website-development.html">Website Development</a></li>
-                                <li><a href="iot-services.html">IoT Services &amp; Smart Cards</a></li>
-                                <li><a href="web-solutions.html">Web Solutions</a></li>
-                                <li><a href="ict-procurement.html">ICT Tools Procurement</a></li>
-                                <li><a href="uav.html">UAV Operations</a></li>
+                                <li><a href="cybersecurity-services.html" data-service="cybersecurity-services.html">Cybersecurity Services</a></li>
+                                <li class="active"><a href="software-development.html" data-service="software-development.html">Software Development</a></li>
+                                <li><a href="website-development.html" data-service="website-development.html">Website Development</a></li>
+                                <li><a href="iot-services.html" data-service="iot-services.html">IoT Services &amp; Smart Cards</a></li>
+                                <li><a href="web-solutions.html" data-service="web-solutions.html">Web Solutions</a></li>
+                                <li><a href="ict-procurement.html" data-service="ict-procurement.html">ICT Tools Procurement</a></li>
+                                <li><a href="uav.html" data-service="uav.html">UAV Operations</a></li>
                             </ul>
                         </div>
                         <div class="sidebar-cta-box wow fadeInUp" data-wow-delay="0.2s">
@@ -173,17 +188,17 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <figure class="image-anime" data-cursor-text="Drag">
-                                            <img src="images/service-1.jpg" alt="">
+                                            <img src="images/software-1.jpg" alt="">
                                         </figure>
                                     </div>
                                     <div class="swiper-slide">
                                         <figure class="image-anime" data-cursor-text="Drag">
-                                            <img src="images/service-2.jpg" alt="">
+                                            <img src="images/software-2.jpg" alt="">
                                         </figure>
                                     </div>
                                     <div class="swiper-slide">
                                         <figure class="image-anime" data-cursor-text="Drag">
-                                            <img src="images/service-3.jpg" alt="">
+                                            <img src="images/software-3.jpg" alt="">
                                         </figure>
                                     </div>
                                 </div>
@@ -426,5 +441,111 @@
     <script src="js/jquery.mb.YTPlayer.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/function.js"></script>
+
+    <script>
+    (function() {
+        var THIS_PAGE = 'software-development.html';
+
+        var serviceHeroConfig = {
+            'cybersecurity-services.html': {
+                images: ['images/service-1.jpg', 'images/service-2.jpg', 'images/service-3.jpg'],
+                title: 'Cybersecurity Services',
+                breadcrumb: 'Cybersecurity Services'
+            },
+            'software-development.html': {
+                images: ['images/software-1.jpg', 'images/software-2.jpg', 'images/software-3.jpg'],
+                title: 'Software Development',
+                breadcrumb: 'Software Development'
+            },
+            'website-development.html': {
+                images: ['images/website-1.jpg', 'images/website-2.jpg', 'images/website-3.jpg'],
+                title: 'Website Development',
+                breadcrumb: 'Website Development'
+            },
+            'iot-services.html': {
+                images: ['images/iot-1.jpg', 'images/iot-2.jpg', 'images/iot-3.jpg'],
+                title: 'IoT Services & Smart Cards',
+                breadcrumb: 'IoT Services & Smart Cards'
+            },
+            'web-solutions.html': {
+                images: ['images/websolutions1.jpg', 'images/websolutions2.jpg', 'images/websolutions3.jpg'],
+                title: 'Web Solutions',
+                breadcrumb: 'Web Solutions'
+            },
+            'ict-procurement.html': {
+                images: ['images/ict-1.jpg', 'images/ict-2.jpg', 'images/ict-3.jpg'],
+                title: 'ICT Tools Procurement',
+                breadcrumb: 'ICT Tools Procurement'
+            },
+            'uav.html': {
+                images: ['images/uav-image.jpg', 'images/uav-image.jpg', 'images/uav-image.jpg'],
+                title: 'UAV Operations',
+                breadcrumb: 'UAV Operations'
+            }
+        };
+
+        function applyHeroImage(pageKey) {
+            var heroEl = document.getElementById('servicePageHero');
+            if (!heroEl) return;
+            var config = serviceHeroConfig[pageKey];
+            if (!config) return;
+            var imgUrl = config.images[0];
+            heroEl.style.opacity = '0.4';
+            setTimeout(function() {
+                heroEl.style.backgroundImage = 'url("' + imgUrl + '")';
+                heroEl.style.opacity = '1';
+            }, 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var navigatedService = null;
+            try { navigatedService = sessionStorage.getItem('mgl_active_service'); } catch(e) {}
+
+            /* If navigated from a DIFFERENT page, apply that page's hero image */
+            if (navigatedService && navigatedService !== THIS_PAGE) {
+                applyHeroImage(navigatedService);
+                var config = serviceHeroConfig[navigatedService];
+                if (config) {
+                    var titleEl = document.getElementById('heroTitle');
+                    var breadEl = document.getElementById('heroBreadcrumb');
+                    if (titleEl) titleEl.textContent = config.title;
+                    if (breadEl) breadEl.textContent = config.breadcrumb;
+                }
+            }
+
+            /* Always update this page's own slider images as this page's hero
+               when user clicked THIS link from another service page */
+            if (navigatedService === THIS_PAGE) {
+                applyHeroImage(THIS_PAGE);
+            }
+
+            /* Intercept category sidebar links */
+            var categoryLinks = document.querySelectorAll('.page-catagery-list ul li a');
+            categoryLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var href = this.getAttribute('href') || '';
+                    var parts = href.split('/');
+                    var filename = parts[parts.length - 1];
+                    try {
+                        sessionStorage.setItem('mgl_active_service', filename);
+                    } catch(err) {}
+                });
+            });
+
+            /* Also handle nav-menu service links */
+            var navServiceLinks = document.querySelectorAll('.main-menu ul ul li a');
+            navServiceLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var href = this.getAttribute('href') || '';
+                    var parts = href.split('/');
+                    var filename = parts[parts.length - 1];
+                    if (serviceHeroConfig[filename]) {
+                        try { sessionStorage.setItem('mgl_active_service', filename); } catch(err) {}
+                    }
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
