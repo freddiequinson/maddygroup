@@ -11,7 +11,7 @@
 	<!-- Page Title -->
     <title>MaddyGroup Ltd - Cybersecurity Services Ghana</title>
 	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/maddylogo.jpg">
+	<link rel="shortcut icon" type="image/x-icon" href="images/maddy logo with bg.png.jpg">
 	<!-- Google Fonts Css-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,6 +109,164 @@
 				line-height: 1.4 !important;
 			}
 		}
+
+		/* =============================================
+		   HOME PAGE TEAM SECTION — 3×3 GRID SMALL CARDS
+		   ============================================= */
+
+		/* Ensure the entire section has a dark background */
+		.our-team {
+			background: #0d1128 !important;
+		}
+
+		.our-team .team-grid-home {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
+		}
+
+		.our-team .team-card-mini {
+			background: rgba(255,255,255,0.06);
+			border: 1px solid rgba(255,255,255,0.10);
+			border-radius: 16px;
+			overflow: hidden;
+			transition: transform 0.35s ease, box-shadow 0.35s ease;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.our-team .team-card-mini:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 20px 56px rgba(0,0,0,0.45);
+		}
+
+		/* Fixed image container — show full face */
+		.our-team .team-card-mini .mini-img-wrap {
+			position: relative;
+			width: 100%;
+			height: 220px;
+			overflow: hidden;
+			background: #1a1f3a;
+		}
+
+		.our-team .team-card-mini .mini-img-wrap img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center 15%; /* show face, not just the top of the head */
+			display: block;
+			transition: transform 0.5s ease;
+		}
+
+		.our-team .team-card-mini:hover .mini-img-wrap img {
+			transform: scale(1.06);
+		}
+
+		/* Gradient overlay — shallow so it doesn't cover the face */
+		.our-team .team-card-mini .mini-overlay {
+			position: absolute;
+			bottom: 0; left: 0; right: 0;
+			height: 38%;
+			background: linear-gradient(to top, rgba(10,15,40,0.70) 0%, transparent 100%);
+			pointer-events: none;
+		}
+
+		/* Social icons inside overlay */
+		.our-team .team-card-mini .mini-socials {
+			position: absolute;
+			bottom: 10px;
+			right: 12px;
+			display: flex;
+			gap: 6px;
+			opacity: 0;
+			transform: translateY(6px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			z-index: 6;
+		}
+
+		.our-team .team-card-mini:hover .mini-socials {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.our-team .team-card-mini .mini-socials a {
+			width: 30px;
+			height: 30px;
+			border-radius: 8px;
+			background: rgba(255,255,255,0.18);
+			backdrop-filter: blur(4px);
+			border: 1px solid rgba(255,255,255,0.28);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: 12px;
+			text-decoration: none;
+			transition: background 0.2s ease, border-color 0.2s ease;
+		}
+
+		.our-team .team-card-mini .mini-socials a:hover {
+			background: var(--primary-color, #e84917);
+			border-color: var(--primary-color, #e84917);
+		}
+
+		/* ===================================================
+		   CARD INFO AREA — solid dark background so text
+		   is ALWAYS visible regardless of page bg behind it
+		   =================================================== */
+		.our-team .team-card-mini .mini-info {
+			padding: 14px 16px 18px;
+			background: #111827; /* solid dark — never transparent */
+		}
+
+		.our-team .team-card-mini .mini-info h3 {
+			font-size: 15px;
+			font-weight: 700;
+			color: #ffffff !important;
+			margin: 0 0 5px;
+			line-height: 1.25;
+		}
+
+		.our-team .team-card-mini .mini-info p {
+			font-size: 12.5px;
+			color: rgba(255,255,255,0.62) !important;
+			margin: 0;
+			line-height: 1.4;
+		}
+
+		/* Clickable overlay for nav to team.html */
+		.our-team .team-card-mini .mini-link-overlay {
+			position: absolute;
+			inset: 0;
+			z-index: 5;
+		}
+
+		/* Responsive */
+		@media (max-width: 991px) {
+			.our-team .team-grid-home {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 18px;
+			}
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 190px;
+			}
+		}
+
+		@media (max-width: 576px) {
+			.our-team .team-grid-home {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 12px;
+			}
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 160px;
+			}
+			.our-team .team-card-mini .mini-info h3 {
+				font-size: 13px;
+			}
+			.our-team .team-card-mini .mini-info p {
+				font-size: 11px;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -170,7 +328,7 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="./" style="display: flex; align-items: center; gap: 12px;">
-						<img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
+						<img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
 						<span style="font-size: 20px; font-weight: 700; color: #000; white-space: nowrap;">Maddy Group Ltd</span>
 					</a>
 					<!-- Logo End -->
@@ -1241,131 +1399,6 @@
     </div>
     <!-- Our Projects Section End -->
 
-    <!-- Why Choose Us Section Start -->
-    <div class="why-choose-us">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <!-- Why Choose Image Start -->
-                    <div class="why-choose-image">
-                        <figure class="image-anime reveal">
-                            <img src="images/why-choose-us2.webp" alt="">
-                        </figure>
-                    </div>
-                    <!-- Why Choose Image End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Why Choose Content Start -->
-                    <div class="why-choose-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title dark-section">
-                            <h3 class="wow fadeInUp">why choose us</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Reliable solutions for technology excellence</h2>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- Why Choose List Start -->
-                        <div class="why-choose-list">
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-1.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>expertise and experience</h3>
-                                    <p>A team of seasoned technology professionals with extensive industry knowledge.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-2.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>proactive security approach</h3>
-                                    <p>Focused on preventing threats before they impact your system, not just reacting after the fact.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-3.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>tailored training programs</h3>
-                                    <p>Educating your team on security best practices to reduce human error and enhance vigilance.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-                        </div>
-                        <!-- Why Choose List End -->
-                    </div>
-                    <!-- Why Choose Content End -->
-                </div>
-
-                <div class="col-lg-12">
-                    <!-- Why Choose Counter List Start -->
-                    <div class="why-choose-counter-list">
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-1.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">25</span>+</h3>
-                                <p>Years Experience</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-2.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">15</span>K</h3>
-                                <p>project complete</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-3.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">16</span>K</h3>
-                                <p>customer happy</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-4.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">120</span></h3>
-                                <p>winning awards</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-                    </div>
-                    <!-- Why Choose Counter List End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Why Choose Us Section End -->
-
     <!-- Technology Partners Section Start -->
     <div class="technology-partners">
         <div class="container">
@@ -1696,65 +1729,74 @@
                             <div class="testimonial-slider">
                                 <div class="swiper">
                                     <div class="swiper-wrapper" data-cursor-text="Drag">
-                                        <!-- Testimonial Slide Start -->
+                                        <!-- Testimonial Slide 1 -->
                                         <div class="swiper-slide">
                                             <div class="testimonial-item">
                                                 <div class="testimonial-header">
                                                     <div class="testimonial-company-logo">
-                                                        <img src="images/athena-logo.svg" alt="Athena Technologies">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="160" height="44" aria-label="Irotech Solutions Ltd">
+                                                            <defs>
+                                                                <linearGradient id="iroGradT1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                                    <stop offset="0%" style="stop-color:#1a3a6b;stop-opacity:1"/>
+                                                                    <stop offset="100%" style="stop-color:#0d6efd;stop-opacity:1"/>
+                                                                </linearGradient>
+                                                            </defs>
+                                                            <path d="M10 8 L30 4 L50 8 L50 28 Q50 42 30 50 Q10 42 10 28 Z" fill="url(#iroGradT1)" opacity="0.9"/>
+                                                            <path d="M20 22 L27 30 L40 18" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                                            <text x="60" y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" fill="#1a3a6b" letter-spacing="0.5">IROTECH</text>
+                                                            <text x="60" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="500" fill="#0d6efd" letter-spacing="2">SOLUTIONS LTD</text>
+                                                            <line x1="60" y1="44" x2="160" y2="44" stroke="#0d6efd" stroke-width="1" opacity="0.4"/>
+                                                            <text x="60" y="54" font-family="'Segoe UI', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#666" letter-spacing="1">CYBER · INFRASTRUCTURE · INNOVATION</text>
+                                                        </svg>
                                                     </div>        
                                                     <div class="testimonial-quote">
                                                         <img src="images/testimonial-quote.svg" alt="">
                                                     </div>
                                                 </div>                               
                                                 <div class="testimonial-content">
-                                                    <p>"Maddy Group Ltd transformed our cybersecurity posture completely. Their penetration testing revealed critical vulnerabilities we never knew existed. Kenneth and his team provided exceptional guidance throughout the remediation process."</p>
-                                                    <p>"As a leading Ghanaian technology company, we needed world-class security. Maddy Group's 24/7 SOC monitoring gives us peace of mind knowing our systems are protected around the clock."</p>
+                                                    <p>"Maddy Group has been instrumental in strengthening our security operations, from infrastructure hardening to incident response. Their expertise, responsiveness, and ability to deliver practical solutions have significantly improved our system stability and threat visibility."</p>
                                                 </div>
                                                 <div class="testimonial-body">
                                                     <div class="author-image">
                                                         <figure class="image-anime">
-                                                            <img src="images/author-1.jpg" alt="">
+                                                            <img src="images/testi1.jpg" alt="Liam Anderson">
                                                         </figure>
                                                     </div>
                                                     <div class="author-content">
-                                                        <h3>Razak Mohammed</h3>
-                                                        <p>CTO, Athena Technologies</p>
+                                                        <h3>Liam Anderson</h3>
+                                                        <p>Managing Director, Irotech Solutions Ltd</p>
                                                     </div>   
                                                 </div>                                    
                                             </div>
                                         </div>
-                                        <!-- Testimonial Slide End -->
 
-                                        <!-- Testimonial Slide Start -->
+                                        <!-- Testimonial Slide 2 -->
                                         <div class="swiper-slide">
                                             <div class="testimonial-item">
                                                 <div class="testimonial-header">
                                                     <div class="testimonial-company-logo">
-                                                        <img src="images/goldcoast-financial-logo.svg" alt="Gold Coast Financial Services">
+                                                        <img src="images/kono tech logo.png" alt="KONO Technology Systems LLC" style="max-height:50px; width:auto; object-fit:contain;">
                                                     </div>        
                                                     <div class="testimonial-quote">
                                                         <img src="images/testimonial-quote.svg" alt="">
                                                     </div>
                                                 </div>                               
                                                 <div class="testimonial-content">
-                                                    <p>"When we suffered a ransomware attack, Maddy Group's incident response team was on-site within hours. Their digital forensics expertise helped us recover completely and implement stronger defenses."</p>
-                                                    <p>"The compliance audit they conducted helped us achieve ISO 27001 certification. Their understanding of both international standards and local Ghanaian business needs is unmatched."</p>
+                                                    <p>"Maddy Group consistently delivers exceptional cybersecurity and infrastructure support. Their structured approach to risk management and clear, actionable guidance have strengthened our systems and improved our operational resilience."</p>
                                                 </div>
                                                 <div class="testimonial-body">
                                                     <div class="author-image">
                                                         <figure class="image-anime">
-                                                            <img src="images/author-2.jpg" alt="">
+                                                            <img src="images/testi2.jpeg" alt="Solomon Wab">
                                                         </figure>
                                                     </div>
                                                     <div class="author-content">
-                                                        <h3>Ama Serwah Nerquaye-Tetteh</h3>
-                                                        <p>Head of IT Security, Gold Coast Financial Services</p>
+                                                        <h3>Solomon Wab</h3>
+                                                        <p>Head of IT Security, KONO Technology Systems LLC</p>
                                                     </div>   
                                                 </div>                                    
                                             </div>
                                         </div>
-                                        <!-- Testimonial Slide End -->
                                     </div>
                                     <div class="testimonial-btn">
                                         <div class="testimonial-button-prev"></div>
@@ -1764,7 +1806,7 @@
                             </div>
                             <!-- Testimonial Slide End -->
 
-                            <!-- Testimnoial Contact Info Start -->
+                            <!-- Testimonial Contact Info Start -->
                             <div class="testimonial-contact-info">
                                 <!-- Testimonial Contact Box Start -->
                                 <div class="testimonial-contact-box">
@@ -1783,7 +1825,7 @@
                                 </div>
                                 <!-- Testimonial Contact Button End -->
                             </div>
-                            <!-- Testimnoial Contact Info End -->
+                            <!-- Testimonial Contact Info End -->
                         </div>
                         <!-- Testimonial Slide Box End -->
                     </div>
@@ -1794,162 +1836,145 @@
     </div>
     <!-- Our Testimonials Section End -->
 
-    <!-- Our Team Section Start -->
-<div class="our-team">
-    <div class="container">
-        <div class="row section-row">
-            <div class="col-lg-12">
-                <!-- Section Title Start -->
-                <div class="section-title dark-section">
-                    <h3 class="wow fadeInUp">Expert team</h3>
-                    <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Our expert team member</h2>
+    <!-- Our Team Section Start — 3×3 mini-card grid -->
+    <div class="our-team">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title dark-section">
+                        <h3 class="wow fadeInUp">Expert team</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Our expert team members</h2>
+                    </div>
+                    <!-- Section Title End -->
                 </div>
-                <!-- Section Title End -->
             </div>
-        </div>
- 
-        <div class="row">
- 
-            <!-- 1. Dunstan Guba -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Item Start -->
-                <div class="team-item wow fadeInUp">
-                    <!-- Team Image Start -->
-                    <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
-                            <figure class="image-anime">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- 3×3 mini-card grid -->
+                    <div class="team-grid-home wow fadeInUp" data-wow-delay="0.3s">
+
+                        <!-- 1. Dunstan Guba -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Dunstan Guba's profile"></a>
+                            <div class="mini-img-wrap">
                                 <img src="images/team-1.jpg" alt="Dunstan Guba">
-                            </figure>
-                        </a>
- 
-                        <!-- Team Social Icon Start -->
-                        <div class="team-social-icon">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Dunstan Guba</h3>
+                                <p>VAPT / Digital Forensic Expert</p>
+                            </div>
                         </div>
-                        <!-- Team Social Icon End -->
-                    </div>	
-                    <!-- Team Image End -->
- 
-                    <!-- Team Content Start -->
-                    <div class="team-content">
-                        <h3><a href="team-single.html">Dunstan Guba</a></h3>
-                        <p>VAPT/Digital Forensic Expert</p>
-                    </div>
-                    <!-- Team Content End -->
-                </div>
-                <!-- Team Item End -->
-            </div>
- 
-            <!-- 2. Agyare Fredrick -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Item Start -->
-                <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-                    <!-- Team Image Start -->
-                    <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
-                            <figure class="image-anime">
+
+                        <!-- 2. Agyare Fredrick -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Agyare Fredrick's profile"></a>
+                            <div class="mini-img-wrap">
                                 <img src="images/fred.webp" alt="Agyare Fredrick">
-                            </figure>
-                        </a>
- 
-                        <!-- Team Social Icon Start -->
-                        <div class="team-social-icon">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Agyare Fredrick</h3>
+                                <p>Cloud Engineer</p>
+                            </div>
                         </div>
-                        <!-- Team Social Icon End -->
-                    </div>	
-                    <!-- Team Image End -->
- 
-                    <!-- Team Content Start -->
-                    <div class="team-content">
-                        <h3><a href="team-single.html">Agyare Fredrick</a></h3>
-                        <p>Cloud Engineer</p>
-                    </div>
-                    <!-- Team Content End -->
-                </div>
-                <!-- Team Item End -->
-            </div>
- 
-            <!-- 3. Godwin Mensah -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Item Start -->
-                <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-                    <!-- Team Image Start -->
-                    <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
-                            <figure class="image-anime">
+
+                        <!-- 3. Godwin Mensah -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Godwin Mensah's profile"></a>
+                            <div class="mini-img-wrap">
                                 <img src="images/rams1.jpg" alt="Godwin Mensah">
-                            </figure>
-                        </a>
- 
-                        <!-- Team Social Icon Start -->
-                        <div class="team-social-icon">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Godwin Mensah</h3>
+                                <p>DevOps Engineer</p>
+                            </div>
                         </div>
-                        <!-- Team Social Icon End -->
-                    </div>	
-                    <!-- Team Image End -->
- 
-                    <!-- Team Content Start -->
-                    <div class="team-content">
-                        <h3><a href="team-single.html">Godwin Mensah</a></h3>
-                        <p>DevOps Engineer</p>
-                    </div>
-                    <!-- Team Content End -->
-                </div>
-                <!-- Team Item End -->
-            </div>
- 
-            <!-- 4. Ebenezer Kwafo -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Item Start -->
-                <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-                    <!-- Team Image Start -->
-                    <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
-                            <figure class="image-anime">
+
+                        <!-- 4. Ebenezer Kwafo -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Ebenezer Kwafo's profile"></a>
+                            <div class="mini-img-wrap">
                                 <img src="images/eben2.png" alt="Ebenezer Kwafo">
-                            </figure>
-                        </a>
- 
-                        <!-- Team Social Icon Start -->
-                        <div class="team-social-icon">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Ebenezer Kwafo</h3>
+                                <p>Incidence Response Specialist</p>
+                            </div>
                         </div>
-                        <!-- Team Social Icon End -->
-                    </div>	
-                    <!-- Team Image End -->
- 
-                    <!-- Team Content Start -->
-                    <div class="team-content">
-                        <h3><a href="team-single.html">Ebenezer Kwafo</a></h3>
-                        <p>Incidence Response Specialist</p>
+
+                        <!-- 5. Pearl Agyekum -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Pearl Agyekum's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/pearl2.png" alt="Pearl Agyekum">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Pearl Agyekum</h3>
+                                <p>Product Manager</p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Richard Acheampong -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Richard Acheampong's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/team5.jpg" alt="Richard Acheampong">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Richard Acheampong</h3>
+                                <p>Software / AI Engineer</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- Team Content End -->
+                    <!-- End team-grid-home -->
+
+                    <!-- View All Team CTA -->
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.5s" style="margin-top: 36px;">
+                        
+                    </div>
                 </div>
-                <!-- Team Item End -->
             </div>
- 
         </div>
     </div>
-</div>
-<!-- Our Team Section End -->
+    <!-- Our Team Section End -->
 
     <!-- CTA Box Section Start -->
     <div class="cta-box-section">
@@ -2229,7 +2254,7 @@
                     <div class="footer-header">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;">
-                            <img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
+                            <img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
                             <span style="font-size: 24px; font-weight: 700; color: #fff;">Maddy Group Ltd</span>
                         </div>
                         <!-- Footer Logo End -->

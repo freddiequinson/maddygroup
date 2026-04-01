@@ -11,7 +11,7 @@
 	<!-- Page Title -->
     <title>Our Expert Cybersecurity Team - Maddy Group Ltd Ghana</title>
 	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/maddylogo.jpg">
+	<link rel="shortcut icon" type="image/x-icon" href="images/maddy logo with bg.png">
 	<!-- Google Fonts Css-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,57 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<style>
+		/* ===========================================
+		   TEAM PAGE — 3×3 GRID LAYOUT
+		   Always 3 columns on desktop, 2 on tablet,
+		   1 on mobile. Overrides the default
+		   col-lg-3 (4-up) Bootstrap grid.
+		   =========================================== */
+		.page-team .team-grid-3x3 {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 30px;
+		}
+
+		/* Each card fills its grid cell */
+		.page-team .team-grid-3x3 .team-item {
+			/* Reset any Bootstrap col margin/padding that might interfere */
+			margin-bottom: 0 !important;
+			width: 100% !important;
+		}
+
+		/* ---- Image: show face not just top of head ---- */
+		.page-team .team-item .team-image figure img {
+			width: 100%;
+			height: 320px;         /* fixed height so all cards are equal */
+			object-fit: cover;
+			object-position: center 15%; /* pull image up so face is centred */
+			display: block;
+		}
+
+		/* Responsive */
+		@media (max-width: 991px) {
+			.page-team .team-grid-3x3 {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 24px;
+			}
+			.page-team .team-item .team-image figure img {
+				height: 280px;
+			}
+		}
+
+		@media (max-width: 575px) {
+			.page-team .team-grid-3x3 {
+				grid-template-columns: 1fr;
+				gap: 20px;
+			}
+			.page-team .team-item .team-image figure img {
+				height: 260px;
+			}
+		}
+	</style>
 </head>
 <body>
 
@@ -91,7 +142,7 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="./" style="display: flex; align-items: center; gap: 12px;">
-						<img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
+						<img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
 						<span style="font-size: 20px; font-weight: 700; color: #000; white-space: nowrap;">Maddy Group Ltd</span>
 					</a>
 					<!-- Logo End -->
@@ -166,213 +217,151 @@
     <!-- Page Team Start -->
     <div class="page-team">
         <div class="container">
-            <div class="row">
+            <!-- 3×3 CSS Grid — replaces the old Bootstrap row/col approach -->
+            <div class="team-grid-3x3">
 
                 <!-- 1. Dunstan Guba -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/team-1.jpg" alt="Dunstan Guba">
-                                </figure>
-                            </a>
-                
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-                
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Dunstan Guba</a></h3>
-                            <p>VAPT/Digital Forensic Expert</p>
+                <div class="team-item wow fadeInUp">
+                    <div class="team-image">
+                        <a href="team-single.html" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/team-1.jpg" alt="Dunstan Guba">
+                            </figure>
+                        </a>
+                        <div class="team-social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <!-- Team Content End -->
                     </div>
-                    <!-- Team Item End -->
+                    <div class="team-content">
+                        <h3><a href="team-single.html">Dunstan Guba</a></h3>
+                        <p>VAPT / Digital Forensic Expert</p>
+                    </div>
                 </div>
 
-                <!-- 2. Fredrick Agyare -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/fred.webp" alt="Agyare Fredrick">
-                                </figure>
-                            </a>
-                
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-                
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Agyare Fredrick</a></h3>
-                            <p>Cloud Engineer</p>
+                <!-- 2. Agyare Fredrick -->
+                <div class="team-item wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-image">
+                        <a href="team-single.html" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/fred.webp" alt="Agyare Fredrick">
+                            </figure>
+                        </a>
+                        <div class="team-social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <!-- Team Content End -->
                     </div>
-                    <!-- Team Item End -->
+                    <div class="team-content">
+                        <h3><a href="team-single.html">Agyare Fredrick</a></h3>
+                        <p>Cloud Engineer</p>
+                    </div>
                 </div>
 
                 <!-- 3. Godwin Mensah -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/rams1.jpg" alt="Godwin Mensah">
-                                </figure>
-                            </a>
-                
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-                
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Godwin Mensah</a></h3>
-                            <p>DevOps Engineer</p>
+                <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-image">
+                        <a href="team-single.html" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/rams1.jpg" alt="Godwin Mensah">
+                            </figure>
+                        </a>
+                        <div class="team-social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <!-- Team Content End -->
                     </div>
-                    <!-- Team Item End -->
+                    <div class="team-content">
+                        <h3><a href="team-single.html">Godwin Mensah</a></h3>
+                        <p>DevOps Engineer</p>
+                    </div>
                 </div>
 
                 <!-- 4. Ebenezer Kwafo -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/eben2.png" alt="Ebenezer Kwafo">
-                                </figure>
-                            </a>
-                
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-                
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Ebenezer Kwafo</a></h3>
-                            <p>Incidence Response Specialist</p>
+                <div class="team-item wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-image">
+                        <a href="team-single.html" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/eben2.png" alt="Ebenezer Kwafo">
+                            </figure>
+                        </a>
+                        <div class="team-social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <!-- Team Content End -->
                     </div>
-                    <!-- Team Item End -->
+                    <div class="team-content">
+                        <h3><a href="team-single.html">Ebenezer Kwafo</a></h3>
+                        <p>Incidence Response Specialist</p>
+                    </div>
                 </div>
 
                 <!-- 5. Pearl Agyekum -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/pearl2.png" alt="Pearl Agyekum">
-                                </figure>
-                            </a>
-                
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-                
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Pearl Agyekum</a></h3>
-                            <p>Product Manager</p>
+                <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="team-image">
+                        <a href="team-single.html" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/pearl2.png" alt="Pearl Agyekum">
+                            </figure>
+                        </a>
+                        <div class="team-social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <!-- Team Content End -->
                     </div>
-                    <!-- Team Item End -->
+                    <div class="team-content">
+                        <h3><a href="team-single.html">Pearl Agyekum</a></h3>
+                        <p>Product Manager</p>
+                    </div>
                 </div>
 
                 <!-- 6. Richard Acheampong -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="1s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/team5.jpg" alt="Richard Acheampong">
-                                </figure>
-                            </a>
-                
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-                
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Richard Acheampong</a></h3>
-                            <p>Software/AI Engineer</p>
+                <div class="team-item wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-image">
+                        <a href="team-single.html" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/team5.jpg" alt="Richard Acheampong">
+                            </figure>
+                        </a>
+                        <div class="team-social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <!-- Team Content End -->
                     </div>
-                    <!-- Team Item End -->
+                    <div class="team-content">
+                        <h3><a href="team-single.html">Richard Acheampong</a></h3>
+                        <p>Software / AI Engineer</p>
+                    </div>
                 </div>
 
+                <!--
+                    =====================================================
+                    ADD MORE TEAM MEMBERS HERE — they auto-wrap into 3×3.
+                    Just copy one <div class="team-item"> block above and
+                    paste it here with the new member's details.
+                    =====================================================
+                -->
+
             </div>
+            <!-- End team-grid-3x3 -->
         </div>
     </div>
     <!-- Page Team End -->
@@ -386,7 +375,7 @@
                     <div class="footer-header">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;">
-                            <img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
+                            <img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
                             <span style="font-size: 24px; font-weight: 700; color: #fff;">Maddy Group Ltd</span>
                         </div>
                         <!-- Footer Logo End -->
