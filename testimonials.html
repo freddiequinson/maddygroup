@@ -32,6 +32,56 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<style>
+		/* =====================================================
+		   TESTIMONIALS PAGE — REAL CLIENT CARDS STYLING
+		   ===================================================== */
+
+		/* Upgraded testimonial items to show company logos properly */
+		.page-testimonials .testimonial-item .testimonial-company-logo img,
+		.page-testimonials .testimonial-item .testimonial-company-logo svg {
+			max-height: 52px;
+			width: auto;
+			max-width: 160px;
+			object-fit: contain;
+			display: block;
+		}
+
+		/* Inline SVG logo container */
+		.page-testimonials .testimonial-item .testimonial-company-logo {
+			display: flex;
+			align-items: center;
+			min-height: 52px;
+		}
+
+		/* Star rating row */
+		.testimonial-stars {
+			display: flex;
+			gap: 3px;
+			margin: 10px 0 8px;
+		}
+
+		.testimonial-stars i {
+			color: #f5a623;
+			font-size: 14px;
+		}
+
+		/* Company tag chip */
+		.testimonial-company-tag {
+			display: inline-block;
+			padding: 3px 12px;
+			border-radius: 20px;
+			background: rgba(232,73,23,0.10);
+			color: var(--primary-color, #e84917);
+			font-size: 11.5px;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			border: 1px solid rgba(232,73,23,0.18);
+		}
+	</style>
 </head>
 <body>
 
@@ -91,7 +141,7 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="./" style="display: flex; align-items: center; gap: 12px;">
-						<img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
+						<img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
 						<span style="font-size: 20px; font-weight: 700; color: #000; white-space: nowrap;">Maddy Group Ltd</span>
 					</a>
 					<!-- Logo End -->
@@ -102,7 +152,7 @@
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="./">Home</a></li>                                
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="services.html">Services</a>
+                                <li class="nav-item submenu"><a class="nav-link" href="cybersecurity-services.html">Services</a>
                                     <ul>
                                         <li class="nav-item"><a class="nav-link" href="cybersecurity-services.html">Cybersecurity Services</a></li>
                                         <li class="nav-item"><a class="nav-link" href="software-development.html">Software Development</a></li>
@@ -116,7 +166,6 @@
                                 <li class="nav-item submenu"><a class="nav-link" href="#">Resources</a>
                                     <ul>                                        
                                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
                                         <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
                                         <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
                                         <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
@@ -168,308 +217,108 @@
     <div class="page-testimonials">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+
+                <!-- =============================================
+                     REAL TESTIMONIAL 1 — Liam Anderson / Irotech
+                     ============================================= -->
+                <div class="col-lg-6 col-md-12">
                     <!-- Testimonial Item Start -->
                     <div class="testimonial-item wow fadeInUp">
                         <div class="testimonial-header">
                             <div class="testimonial-company-logo">
-                                <img src="images/company-logo-linear.svg" alt="">
+                                <!-- Irotech Solutions Ltd — inline SVG logo -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="170" height="46" aria-label="Irotech Solutions Ltd">
+                                    <defs>
+                                        <linearGradient id="iroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#1a3a6b;stop-opacity:1"/>
+                                            <stop offset="100%" style="stop-color:#0d6efd;stop-opacity:1"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M10 8 L30 4 L50 8 L50 28 Q50 42 30 50 Q10 42 10 28 Z" fill="url(#iroGrad1)" opacity="0.9"/>
+                                    <path d="M20 22 L27 30 L40 18" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <text x="60" y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" fill="#1a3a6b" letter-spacing="0.5">IROTECH</text>
+                                    <text x="60" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="500" fill="#0d6efd" letter-spacing="2">SOLUTIONS LTD</text>
+                                    <line x1="60" y1="44" x2="160" y2="44" stroke="#0d6efd" stroke-width="1" opacity="0.4"/>
+                                    <text x="60" y="54" font-family="'Segoe UI', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#666" letter-spacing="1">CYBER · INFRASTRUCTURE · INNOVATION</text>
+                                </svg>
                             </div>        
                             <div class="testimonial-quote">
                                 <img src="images/testimonial-quote-linear.svg" alt="">
                             </div>
-                        </div>                               
+                        </div>
+                        <!-- Star Rating -->
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="testimonial-company-tag">Irotech Solutions Ltd</span>
                         <div class="testimonial-content">
-                            <p>"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."</p>
+                            <p>"Maddy Group has been instrumental in strengthening our security operations, from infrastructure hardening to incident response. Their expertise, responsiveness, and ability to deliver practical solutions have significantly improved our system stability and threat visibility."</p>
                         </div>
                         <div class="testimonial-body">
                             <div class="author-image">
                                 <figure class="image-anime">
-                                    <img src="images/author-1.jpg" alt="">
+                                    <img src="images/author-1.jpg" alt="Liam Anderson">
                                 </figure>
                             </div>
                             <div class="author-content">
-                                <h3>Alex J.</h3>
-                                <p>IT manager</p>
+                                <h3>Liam Anderson</h3>
+                                <p>Managing Director, Irotech Solutions Ltd</p>
                             </div>   
                         </div>                                    
                     </div>
                     <!-- Testimonial Item End -->
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <!-- ================================================
+                     REAL TESTIMONIAL 2 — Solomon Wab / KONO Technology
+                     ================================================ -->
+                <div class="col-lg-6 col-md-12">
                     <!-- Testimonial Item Start -->
                     <div class="testimonial-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="testimonial-header">
                             <div class="testimonial-company-logo">
-                                <img src="images/company-logo-linear.svg" alt="">
+                                <!-- KONO Technology Systems LLC — use project image -->
+                                <img src="images/kono tech logo.png" alt="KONO Technology Systems LLC" style="max-height:50px; width:auto; max-width:160px; object-fit:contain; display:block;">
                             </div>        
                             <div class="testimonial-quote">
                                 <img src="images/testimonial-quote-linear.svg" alt="">
                             </div>
-                        </div>                               
+                        </div>
+                        <!-- Star Rating -->
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="testimonial-company-tag">KONO Technology Systems LLC</span>
                         <div class="testimonial-content">
-                            <p>"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."</p>
+                            <p>"Maddy Group consistently delivers exceptional cybersecurity and infrastructure support. Their structured approach to risk management and clear, actionable guidance have strengthened our systems and improved our operational resilience."</p>
                         </div>
                         <div class="testimonial-body">
                             <div class="author-image">
                                 <figure class="image-anime">
-                                    <img src="images/author-2.jpg" alt="">
+                                    <img src="images/author-2.jpg" alt="Solomon Wab">
                                 </figure>
                             </div>
                             <div class="author-content">
-                                <h3>Sarah Mitchell</h3>
-                                <p>Cloud manager</p>
+                                <h3>Solomon Wab</h3>
+                                <p>Head of IT Security, KONO Technology Systems LLC</p>
                             </div>   
                         </div>                                    
                     </div>
                     <!-- Testimonial Item End -->
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <!-- Testimonial Item Start -->
-                    <div class="testimonial-item wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="testimonial-header">
-                            <div class="testimonial-company-logo">
-                                <img src="images/company-logo-linear.svg" alt="">
-                            </div>        
-                            <div class="testimonial-quote">
-                                <img src="images/testimonial-quote-linear.svg" alt="">
-                            </div>
-                        </div>                               
-                        <div class="testimonial-content">
-                            <p>"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."</p>
-                        </div>
-                        <div class="testimonial-body">
-                            <div class="author-image">
-                                <figure class="image-anime">
-                                    <img src="images/author-3.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class="author-content">
-                                <h3>Jacob Jones</h3>
-                                <p>Operations Manager</p>
-                            </div>   
-                        </div>                                    
-                    </div>
-                    <!-- Testimonial Item End -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!-- Testimonial Item Start -->
-                    <div class="testimonial-item wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="testimonial-header">
-                            <div class="testimonial-company-logo">
-                                <img src="images/company-logo-linear.svg" alt="">
-                            </div>        
-                            <div class="testimonial-quote">
-                                <img src="images/testimonial-quote-linear.svg" alt="">
-                            </div>
-                        </div>                               
-                        <div class="testimonial-content">
-                            <p>"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."</p>
-                        </div>
-                        <div class="testimonial-body">
-                            <div class="author-image">
-                                <figure class="image-anime">
-                                    <img src="images/author-4.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class="author-content">
-                                <h3>Courtney Henry</h3>
-                                <p>Business Owner</p>
-                            </div>   
-                        </div>                                    
-                    </div>
-                    <!-- Testimonial Item End -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!-- Testimonial Item Start -->
-                    <div class="testimonial-item wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="testimonial-header">
-                            <div class="testimonial-company-logo">
-                                <img src="images/company-logo-linear.svg" alt="">
-                            </div>        
-                            <div class="testimonial-quote">
-                                <img src="images/testimonial-quote-linear.svg" alt="">
-                            </div>
-                        </div>                               
-                        <div class="testimonial-content">
-                            <p>"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."</p>
-                        </div>
-                        <div class="testimonial-body">
-                            <div class="author-image">
-                                <figure class="image-anime">
-                                    <img src="images/author-5.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class="author-content">
-                                <h3>Theresa Webb</h3>
-                                <p>Compliance Officer</p>
-                            </div>   
-                        </div>                                    
-                    </div>
-                    <!-- Testimonial Item End -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!-- Testimonial Item Start -->
-                    <div class="testimonial-item wow fadeInUp" data-wow-delay="1s">
-                        <div class="testimonial-header">
-                            <div class="testimonial-company-logo">
-                                <img src="images/company-logo-linear.svg" alt="">
-                            </div>        
-                            <div class="testimonial-quote">
-                                <img src="images/testimonial-quote-linear.svg" alt="">
-                            </div>
-                        </div>                               
-                        <div class="testimonial-content">
-                            <p>"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."</p>
-                        </div>
-                        <div class="testimonial-body">
-                            <div class="author-image">
-                                <figure class="image-anime">
-                                    <img src="images/author-6.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class="author-content">
-                                <h3>Jenny Wilson</h3>
-                                <p>IT Manager</p>
-                            </div>   
-                        </div>                                    
-                    </div>
-                    <!-- Testimonial Item End -->
-                </div>
             </div>
         </div>
     </div>
     <!-- Page Testimonials End -->
-
-    <!-- Why Choose Us Section Start -->
-    <div class="why-choose-us">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <!-- Why Choose Image Start -->
-                    <div class="why-choose-image">
-                        <figure class="image-anime reveal">
-                            <img src="images/why-choose-image.jpg" alt="">
-                        </figure>
-                    </div>
-                    <!-- Why Choose Image End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Why Choose Content Start -->
-                    <div class="why-choose-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title dark-section">
-                            <h3 class="wow fadeInUp">why choose us</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Reliable solutions for cybersecurity excellence</h2>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- Why Choose List Start -->
-                        <div class="why-choose-list">
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-1.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>expertise and experience</h3>
-                                    <p>A team of seasoned cybersecurity professionals with extensive industry knowledge.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-2.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>proactive security approach</h3>
-                                    <p>Focused on preventing threats before they impact your system, not just reacting after the fact.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-3.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>tailored training programs</h3>
-                                    <p>Educating your team on security best practices to reduce human error and enhance vigilance.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-                        </div>
-                        <!-- Why Choose List End -->
-                    </div>
-                    <!-- Why Choose Content End -->
-                </div>
-
-                <div class="col-lg-12">
-                    <!-- Why Choose Counter List Start -->
-                    <div class="why-choose-counter-list">
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-1.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">25</span>+</h3>
-                                <p>Years Experience</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-2.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">15</span>K</h3>
-                                <p>project complete</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-3.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">16</span>K</h3>
-                                <p>customer happy</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-4.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">120</span></h3>
-                                <p>winning awards</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-                    </div>
-                    <!-- Why Choose Counter List End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Why Choose Us Section End -->
 
     <!-- Our Faqs Section Start -->
     <div class="our-faqs">
@@ -567,16 +416,22 @@
 
     <!-- Main Footer Section Start -->
     <footer class="main-footer">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <!-- Footer Header Start -->
                     <div class="footer-header">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;">
-                            <img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
+                            <img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
                             <span style="font-size: 24px; font-weight: 700; color: #fff;">Maddy Group Ltd</span>
                         </div>
                         <!-- Footer Logo End -->
+
+                        <!-- Footer Social Links Start -->
+                        <div class="footer-social-links">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
@@ -591,7 +446,7 @@
                     <!-- Footer Newsletter Form Start -->
                     <div class="footer-links footer-newsletter-form">
                         <h3>Subscribe our newsletter:</h3>
-                        <p>Protecting networks, systems data from evolving. </p>
+                        <p>Stay updated with the latest cybersecurity insights and threats affecting Ghanaian businesses.</p>
                         <form id="newsletterForm" action="#" method="POST">
                             <div class="form-group">
                                 <input type="email" name="email" class="form-control" id="mail" placeholder="Enter Your Email" required="">
@@ -609,8 +464,9 @@
                         <ul>
                             <li><a href="index.html">home</a></li>
                             <li><a href="about.html">about us</a></li>
-                            <li><a href="services.html">services</a></li>
-                            <li><a href="blog-single.html">blog</a></li>
+                            <li><a href="cybersecurity-services.html">services</a></li>
+                            <li><a href="technologies.html">technologies</a></li>
+                            <li><a href="blog.html">blog</a></li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->
@@ -621,10 +477,12 @@
                     <div class="footer-links">
                         <h3>Services</h3>
                         <ul>
-                            <li><a href="service-single.html">Threat detection</a></li>
-                            <li><a href="service-single.html">Endpoint security</a></li>
-                            <li><a href="service-single.html">Network defense</a></li>
-                            <li><a href="service-single.html">Data encryption</a></li>
+                            <li><a href="cybersecurity-services.html">Cybersecurity Services</a></li>
+                            <li><a href="software-development.html">Software Development</a></li>
+                            <li><a href="website-development.html">Website Development</a></li>
+                            <li><a href="iot-services.html">IoT Services & Smart Cards</a></li>
+                            <li><a href="web-solutions.html">Web Solutions</a></li>
+                            <li><a href="ict-procurement.html">ICT Tools Procurement</a></li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->
@@ -666,7 +524,7 @@
                     <div class="col-md-12">
                         <!-- Footer Copyright Text Start -->
                         <div class="footer-copyright-text">
-                            <p>Copyright © 2025 All Rights Reserved.</p>
+                            <p>Copyright © 2025 Maddy Group Ltd. All Rights Reserved.</p>
                         </div>
                         <!-- Footer Copyright Text End -->
                     </div>
@@ -708,6 +566,5 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
-	<script src="https://demo.awaikenthemes.com/assets/js/theme-panel.js"></script>
 </body>
 </html>
