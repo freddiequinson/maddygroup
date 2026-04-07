@@ -7,8 +7,8 @@
     <meta name="description" content="Maddy Group Ltd - Exclusive Zenduit Partner in Africa. Advanced fleet management and telematics solutions.">
     <meta name="keywords" content="Zenduit, Fleet Management, GPS Tracking, Telematics, Ghana, Africa">
     <meta name="author" content="Maddy Group Ltd">
-    <title> Fleet Management Solutions - Maddy Group Ltd</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/maddy logo with bg.png">
+    <title>zenDUiT Fleet Management Solutions - Maddy Group Ltd</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/maddylogo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -275,7 +275,7 @@
             margin-bottom: 30px;
         }
         
-        /* Modern Benefits List with Index.html Checkmark Style - UPDATED */
+        /* Modern Benefits List with Index.html Checkmark Style */
         .benefits-list-modern {
             list-style: none;
             padding: 0;
@@ -308,30 +308,38 @@
         }
         
         /* Updated Why Choose Zenduit Section - Reduced Spacing */
-        .why-choose-zenduit-section {
-            padding: 80px 0 100px;
-            background: #fff;
-            position: relative;
-        }
+.why-choose-zenduit-section {
+    padding: 80px 0 100px;
+    background: #fff;
+    position: relative;
+}
 
-        .why-choose-zenduit-section .section-title {
-            margin-bottom: 30px; /* Standardized spacing */
-        }
+.why-choose-zenduit-section .section-title {
+    margin-bottom: 30px; /* Standardized spacing */
+}
 
-        .why-choose-zenduit-section .section-title h2 {
-            margin-bottom: 10px; /* Reduced spacing */
-        }
+.why-choose-zenduit-section .section-title h2 {
+    margin-bottom: 10px; /* Reduced spacing */
+}
 
-        .why-choose-zenduit-section .section-title p {
-            margin-bottom: 0; 
-            line-height: 1.5;
-        }
+.why-choose-zenduit-section .section-title p {
+    margin-bottom: 0; 
+    line-height: 1.5;
+}
+
+
+.why-choose-zenduit-section .benefits-list-modern {
+    margin-top: 100px;
+}
+
+.why-choose-zenduit-section .benefits-list-modern li {
+    padding: 14px 0 14px 100px; 
+}
         
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            margin-top: 40px;
         }
         
         .benefits-column {
@@ -347,8 +355,6 @@
         /* Why Choose Us Section - consistent spacing */
         .why-choose-us {
             padding: 80px 0;
-            margin-top: 60px;
-            margin-bottom: 20px;
         }
         
         /* Stats Section */
@@ -543,30 +549,15 @@
                 font-size: 16px;
             }
             
-            /* FIXED: Remove left space on mobile for benefits list */
             .benefits-list-modern li {
                 font-size: 16px;
                 padding: 12px 0 12px 35px;
-                margin-left: 0;
-                padding-left: 35px; /* Ensure consistent left padding */
             }
             
             .benefits-list-modern li::before {
                 width: 20px;
                 height: 20px;
                 top: 12px;
-                left: 0; /* Ensure checkmark is at the very left */
-            }
-            
-            /* FIXED: Specific fix for benefits grid on mobile */
-            .benefits-grid .benefits-list-modern {
-                padding-left: 0;
-                margin-left: 0;
-            }
-            
-            .benefits-grid .benefits-column {
-                padding-left: 0;
-                margin-left: 0;
             }
         }
         
@@ -602,7 +593,6 @@
                 overflow-x: auto;
                 padding-bottom: 15px;
                 margin-bottom: 20px;
-                -webkit-overflow-scrolling: touch;
             }
             
             .tab-btn-modern {
@@ -635,64 +625,11 @@
             .cta-zenduit-modern p {
                 font-size: 16px;
             }
-            
-            /* FIXED: Additional mobile fixes for benefits section */
-            .benefits-list-modern li {
-                padding: 12px 0 12px 32px; /* Reduced left padding for small mobile */
-                margin-left: 0;
-            }
-            
-            .benefits-list-modern li::before {
-                left: 0; /* Ensure checkmark is at the very left edge */
-            }
-            
-            .benefits-grid {
-                gap: 15px;
-                margin-top: 30px;
-            }
-            
-            /* Ensure container padding doesn't create space */
-            .why-choose-zenduit-section .container {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-        }
-        
-        /* FIXED: Extra small devices (phones less than 400px) */
-        @media (max-width: 400px) {
-            .benefits-list-modern li {
-                padding: 10px 0 10px 28px; /* Even tighter for very small screens */
-                font-size: 15px;
-            }
-            
-            .benefits-list-modern li::before {
-                width: 18px;
-                height: 18px;
-                top: 10px;
-                left: 0;
-            }
-            
-            .benefits-grid {
-                gap: 10px;
-            }
         }
         
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* FIXED: Bootstrap container override for benefits section */
-        .why-choose-zenduit-section .container {
-            max-width: 100%;
-        }
-        
-        /* FIXED: Remove any default padding/margin from lists */
-        .benefits-list-modern,
-        .benefits-column,
-        .benefits-grid {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
         }
     </style>
 </head>
@@ -710,7 +647,7 @@
             <div class="row align-items-center">
                 <div class="col-md-7">
                     <div class="topbar-info-text">
-                        <p>Exclusive zen Partner in Africa <a href="contact.html">Contact now</a></p>
+                        <p>Exclusive zenDUiT Partner in Africa <a href="contact.html">Contact now</a></p>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -740,7 +677,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="./" style="display: flex; align-items: center; gap: 12px;">
-                        <img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
+                        <img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
                         <span style="font-size: 20px; font-weight: 700; color: #000; white-space: nowrap;">Maddy Group Ltd</span>
                     </a>
 
@@ -789,7 +726,7 @@
             <div class="hero-container-modern">
                 <div class="hero-content-modern wow fadeInLeft">
                     <h1 class="hero-title-modern">All Your Fleet Needs, One Solution</h1>
-                    <p class="hero-subtitle-modern">Measure, Monitor, and Manage your fleet with ease. As the exclusive zen partner in Africa, we bring world-class fleet management to your business.</p>
+                    <p class="hero-subtitle-modern">Measure, Monitor, and Manage your fleet with ease. As the exclusive zenDUiT partner in Africa, we bring world-class fleet management to your business.</p>
                     <div class="hero-buttons-modern">
                         <a href="contact.html" class="btn-primary-modern">Book A Demo</a>
                         <a href="#solutions" class="btn-secondary-modern">Learn More</a>
@@ -987,7 +924,7 @@
                     <div class="tab-content-modern" id="expandability-modern">
                         <div class="tab-content-wrapper-modern">
                             <div class="tab-image-modern">
-                                <img src="images/seamless.png" alt="Expandability">
+                                <img src="images/Expandability.png" alt="Expandability">
                             </div>
                             <div class="tab-text-content-modern">
                                 <h3>Build Customer-Focused Ecosystem</h3>
@@ -1044,17 +981,17 @@
                 <div class="col-lg-6">
                     <div class="why-choose-image">
                         <figure class="image-anime reveal">
-                            <img src="images/why-choose-image.jpg" alt="">
+                            <img src="images/fleet.jpg" alt="">
                         </figure>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="why-choose-content">
                         <div class="section-title dark-section">
-                            <h3 class="wow fadeInUp">Why MaddyGroup Ltd</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s">Your Trusted <span>Partner</span> in Africa</h2>
+                            <h3 class="wow fadeInUp">Why Maddy Group</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.2s">Your Trusted <span>zenDUiT Partner</span> in Africa</h2>
                             <p class="wow fadeInUp" data-wow-delay="0.4s">
-                                As the exclusive zen partner across Africa, Maddy Group Ltd brings unmatched expertise in fleet management and telematics implementation.
+                                As the exclusive zenDUiT partner across Africa, Maddy Group Ltd brings unmatched expertise in fleet management and telematics implementation.
                             </p>
                         </div>
                         <div class="why-choose-list">
@@ -1063,8 +1000,8 @@
                                     <img src="images/icon-why-choose-1.svg" alt="">
                                 </div>
                                 <div class="why-choose-item-content">
-                                    <h3>Certified zen Specialists</h3>
-                                    <p>Our team is fully trained and certified by zen to deliver world-class implementation and support services.</p>
+                                    <h3>Certified zenDUiT Specialists</h3>
+                                    <p>Our team is fully trained and certified by zenDUiT to deliver world-class implementation and support services.</p>
                                 </div>
                             </div>
                             <div class="why-choose-item wow fadeInUp" data-wow-delay="0.8s">
@@ -1092,7 +1029,24 @@
         </div>
     </div>
 
-    
+    <!-- CTA Section -->
+    <div class="cta-zenduit-modern">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="wow fadeInUp">Ready to Transform Your Fleet Management?</h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">
+                        Contact Maddy Group Ltd today for a free consultation and discover how zenDUiT can revolutionize your operations.
+                    </p>
+                    <div class="wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="contact.html" class="btn-default">Schedule a Demo</a>
+                        <a href="contact.html" class="btn-default">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
@@ -1100,7 +1054,7 @@
                 <div class="col-lg-12">
                     <div class="footer-header">
                         <div class="footer-logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;">
-                            <img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
+                            <img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
                             <span style="font-size: 24px; font-weight: 700; color: #fff;">Maddy Group Ltd</span>
                         </div>
                         <div class="footer-social-links">
@@ -1182,7 +1136,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/validator.min.js"></script>
