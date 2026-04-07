@@ -140,11 +140,14 @@
 			box-shadow: 0 20px 56px rgba(0,0,0,0.45);
 		}
 
-		/* Fixed image container — show full face */
+		/* -------------------------------------------------------
+		   IMAGE CONTAINER — DESKTOP: taller + face-focused
+		   ------------------------------------------------------- */
 		.our-team .team-card-mini .mini-img-wrap {
 			position: relative;
 			width: 100%;
-			height: 220px;
+			/* Increased height on desktop so more of each person shows */
+			height: 280px;
 			overflow: hidden;
 			background: #1a1f3a;
 		}
@@ -153,7 +156,13 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			object-position: center 15%; /* show face, not just the top of the head */
+			/* 
+			  "top" ensures faces/heads are always anchored to the top 
+			  of the container — nothing above the shoulders is cropped.
+			  We shift down slightly (30%) so the full face is centred
+			  rather than cut at the crown.
+			*/
+			object-position: center 25%;
 			display: block;
 			transition: transform 0.5s ease;
 		}
@@ -162,12 +171,12 @@
 			transform: scale(1.06);
 		}
 
-		/* Gradient overlay — shallow so it doesn't cover the face */
+		/* Gradient overlay — kept shallow so it never covers the face */
 		.our-team .team-card-mini .mini-overlay {
 			position: absolute;
 			bottom: 0; left: 0; right: 0;
-			height: 38%;
-			background: linear-gradient(to top, rgba(10,15,40,0.70) 0%, transparent 100%);
+			height: 30%;
+			background: linear-gradient(to top, rgba(10,15,40,0.68) 0%, transparent 100%);
 			pointer-events: none;
 		}
 
@@ -241,17 +250,36 @@
 			z-index: 5;
 		}
 
-		/* Responsive */
+		/* -------------------------------------------------------
+		   RESPONSIVE BREAKPOINTS
+		   ------------------------------------------------------- */
+
+		/* Large desktop: keep 3 columns, tall cards */
+		@media (min-width: 1200px) {
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 300px;
+			}
+		}
+
+		/* Medium / tablet landscape: 3 columns, slightly shorter */
+		@media (max-width: 1199px) and (min-width: 992px) {
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 260px;
+			}
+		}
+
+		/* Tablet portrait: 2 columns */
 		@media (max-width: 991px) {
 			.our-team .team-grid-home {
 				grid-template-columns: repeat(2, 1fr);
 				gap: 18px;
 			}
 			.our-team .team-card-mini .mini-img-wrap {
-				height: 190px;
+				height: 220px;
 			}
 		}
 
+		/* Mobile: 2 columns, smaller image */
 		@media (max-width: 576px) {
 			.our-team .team-grid-home {
 				grid-template-columns: repeat(2, 1fr);

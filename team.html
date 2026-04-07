@@ -53,33 +53,111 @@
 			width: 100% !important;
 		}
 
-		/* ---- Image: show face not just top of head ---- */
-		.page-team .team-item .team-image figure img {
-			width: 100%;
-			height: 320px;         /* fixed height so all cards are equal */
-			object-fit: cover;
-			object-position: center 15%; /* pull image up so face is centred */
+		/* =============================================
+		   IMAGE RENDERING — production-grade technique
+		   Uses aspect-ratio on mobile so the image
+		   height always scales with card width, preventing
+		   the wide-but-short crop that hides faces.
+		   object-position: top center ensures the head/face
+		   is always anchored at the top on every device.
+		   ============================================= */
+
+		/* Base: figure wrapper is the crop container */
+		.page-team .team-item .team-image figure.image-anime {
 			display: block;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			position: relative;
+			background: #1a1f3a;
+			/* Default fixed height for desktop */
+			height: 320px;
+			width: 100%;
 		}
 
-		/* Responsive */
+		/* The actual <img> */
+		.page-team .team-item .team-image figure.image-anime img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/*
+			  "top center" always anchors from the very top of the image —
+			  head and face are never cropped on any screen size or ratio.
+			  This is the most reliable strategy across images with varied
+			  framing (portrait, half-body, full-body shots).
+			*/
+			object-position: top center;
+			display: block;
+			transition: transform 0.5s ease;
+		}
+
+		/* Subtle zoom on hover */
+		.page-team .team-item:hover .team-image figure.image-anime img {
+			transform: scale(1.06);
+		}
+
+		/* -------------------------------------------------------
+		   RESPONSIVE BREAKPOINTS
+		   ------------------------------------------------------- */
+
+		/* Large desktop (≥1200px) */
+		@media (min-width: 1200px) {
+			.page-team .team-item .team-image figure.image-anime {
+				height: 340px;
+			}
+		}
+
+		/* Medium desktop / tablet landscape (992–1199px) */
+		@media (max-width: 1199px) and (min-width: 992px) {
+			.page-team .team-item .team-image figure.image-anime {
+				height: 300px;
+			}
+		}
+
+		/* Tablet portrait (768–991px): 2 columns
+		   Switch to aspect-ratio so height scales with width */
 		@media (max-width: 991px) {
 			.page-team .team-grid-3x3 {
 				grid-template-columns: repeat(2, 1fr);
 				gap: 24px;
 			}
-			.page-team .team-item .team-image figure img {
-				height: 280px;
+			.page-team .team-item .team-image figure.image-anime {
+				height: auto;
+				aspect-ratio: 3 / 4; /* portrait ratio — shows much more of the person */
 			}
 		}
 
+		/* Mobile landscape / large phone (576–767px): 2 columns
+		   Slightly taller ratio to reveal more of each person */
+		@media (max-width: 767px) {
+			.page-team .team-grid-3x3 {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 14px;
+			}
+			.page-team .team-item .team-image figure.image-anime {
+				height: auto;
+				aspect-ratio: 3 / 4;
+			}
+		}
+
+		/* Small mobile (≤575px): single column, full-width portrait */
 		@media (max-width: 575px) {
 			.page-team .team-grid-3x3 {
 				grid-template-columns: 1fr;
 				gap: 20px;
 			}
-			.page-team .team-item .team-image figure img {
-				height: 260px;
+			.page-team .team-item .team-image figure.image-anime {
+				height: auto;
+				/* 4:5 ratio on a full-width card is very generous — full head-to-waist */
+				aspect-ratio: 4 / 5;
+			}
+		}
+
+		/* Extra-small phones (≤399px) */
+		@media (max-width: 399px) {
+			.page-team .team-item .team-image figure.image-anime {
+				height: auto;
+				aspect-ratio: 3 / 4;
 			}
 		}
 	</style>
