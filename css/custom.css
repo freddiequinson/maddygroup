@@ -390,7 +390,7 @@ body{
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background: url('../images/icon-sub-heading.svg');
+    background: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-sub-heading.svg');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: cover;
@@ -997,7 +997,7 @@ header.main-header .header-sticky.active{
 }
 
 .hero-list ul li{
-	background: url('../images/icon-check-white.svg') no-repeat;
+	background: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check-white.svg') no-repeat;
 	background-position: left top;
 	background-size: 24px auto;
 	line-height: 1.5em;
@@ -1219,7 +1219,7 @@ header.main-header .header-sticky.active{
 }
 
 .about-footer-list ul li{
-	background: url('../images/icon-check.svg') no-repeat;
+	background: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg') no-repeat;
 	background-position: left top;
 	background-size: 24px auto;
 	line-height: 1.5em;
@@ -1718,7 +1718,7 @@ header.main-header .header-sticky.active{
 
 .why-choose-us{
 	padding: 100px 0;
-	background: url('../images/why-choose-bg.png'), var(--primary-color);
+	background: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/why-choose-bg.png'), var(--primary-color);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -1924,7 +1924,7 @@ header.main-header .header-sticky.active{
 
 .security-list-item{
 	width: calc(33.33% - 20px);
-	background: url(../images/icon-check.svg) no-repeat;
+	background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg) no-repeat;
 	background-size: 26px auto;
 	background-position: top left;
 	padding-left: 35px;
@@ -2021,7 +2021,7 @@ header.main-header .header-sticky.active{
 }
 
 .pricing-list ul li{
-	background-image: url('../images/icon-check.svg');
+	background-image: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg');
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-size: 24px auto;
@@ -2048,7 +2048,7 @@ header.main-header .header-sticky.active{
 }
 
 .pricing-item.highlighted-box .pricing-list ul li{
-	background-image: url('../images/icon-check-white.svg');
+	background-image: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check-white.svg');
 }
 
 .pricing-item.highlighted-box .btn-default.btn-highlighted:after{
@@ -2091,7 +2091,7 @@ header.main-header .header-sticky.active{
 
 .testimonial-box{
 	position: relative;
-	background: url(../images/testimonial.jpg) no-repeat;
+	background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/testimonial.jpg) no-repeat;
 	background-size: cover;
 	background-position: center center;
 	border-radius: 30px;
@@ -2407,7 +2407,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .our-team{
-	background-image: url('../images/our-team-bg.png'), linear-gradient(180deg, var(--primary-color) 70%, transparent 30%); 
+	background-image: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/our-team-bg.png'), linear-gradient(180deg, var(--primary-color) 70%, transparent 30%); 
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -2595,7 +2595,7 @@ header.main-header .header-sticky.active{
     bottom: 10px;
     right: 0;
     transform: rotateY(180deg);
-    background: url(../images/cta-box-arrow.svg) no-repeat;
+    background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/cta-box-arrow.svg) no-repeat;
 	background-position: right center;
     background-size: cover;
     animation: ctamovearrow 2s infinite linear alternate;
@@ -2873,7 +2873,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .main-footer{
-	background: url(../images/footer-bg.png), linear-gradient(90.15deg, var(--accent-color) 1.15%, var(--accent-secondary-color) 98.84%);
+	background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/footer-bg.png), linear-gradient(90.15deg, var(--accent-color) 1.15%, var(--accent-secondary-color) 98.84%);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 100% auto;
@@ -3051,7 +3051,7 @@ header.main-header .header-sticky.active{
 
 .page-header{
 	position: relative;
-	background-image: url('../images/stock-photo.webp');
+	background-image: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/stock-photo.webp');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -3114,7 +3114,7 @@ header.main-header .header-sticky.active{
 .our-approach{
 	position: relative;
 	padding: 100px 0;
-	background-image: url('../images/our-approach-bg.jpg');
+	background-image: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/our-approach-bg.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -3333,7 +3333,7 @@ header.main-header .header-sticky.active{
 }
 
 .what-we-do-body ul li{
-	background-image: url(../images/icon-check.svg);
+	background-image: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg);
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 24px auto;
@@ -3623,7 +3623,7 @@ header.main-header .header-sticky.active{
 }
 
 .benefit-footer-list ul li{
-	background-image: url(../images/icon-check.svg);
+	background-image: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg);
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 24px auto;
@@ -4285,7 +4285,7 @@ header.main-header .header-sticky.active{
 }
 
 .service-entry ul li{
-    background: url(../images/icon-check.svg) no-repeat;
+    background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg) no-repeat;
     background-position: top left;
     background-size: 24px auto;
     line-height: 1.5em;
@@ -4573,7 +4573,7 @@ header.main-header .header-sticky.active{
 }
 
 .post-entry blockquote{
-	background: url('../images/icon-blockquote.svg'), var(--primary-color);
+	background: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-blockquote.svg'), var(--primary-color);
 	background-repeat: no-repeat;
 	background-position: 35px 25px;
     background-size: 55px;
@@ -4807,7 +4807,7 @@ header.main-header .header-sticky.active{
 
 .project-entry ul li{
 	width: 100%;
-    background: url(../images/icon-check.svg) no-repeat;
+    background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg) no-repeat;
     background-position: top left;
     background-size: 24px auto;
     line-height: 1.5em;
@@ -5143,7 +5143,7 @@ header.main-header .header-sticky.active{
 
 .team-single-list ul li{
 	width: calc(50% - 15px);
-    background: url(../images/icon-check.svg) no-repeat;
+    background: url(https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/icon-check.svg) no-repeat;
     background-position: top left;
     background-size: 24px auto;
     line-height: 1.5em;
@@ -5350,7 +5350,7 @@ header.main-header .header-sticky.active{
 .page-contact-box{
 	position: relative;
 	padding: 0 120px 120px 120px;
-	background: url('../images/contact-box-bg.jpg') no-repeat;
+	background: url('https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/contact-box-bg.jpg') no-repeat;
 	background-position: center center;
 	background-size: cover;
 	border: 1px solid var(--divider-color);
