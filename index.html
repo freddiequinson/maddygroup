@@ -9,9 +9,9 @@
 	<meta name="keywords" content="">
 	<meta name="author" content="Maddy Group Ltd">
 	<!-- Page Title -->
-    <title>Maddy Group Ltd - Cybersecurity Services Ghana</title>
+    <title>MaddyGroup Ltd - Cybersecurity Services Ghana</title>
 	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/maddylogo.jpg">
+	<link rel="shortcut icon" type="image/x-icon" href="images/maddy logo with bg.png.jpg">
 	<!-- Google Fonts Css-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,9 +32,274 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<style>
+		/* Force navbar items into a horizontal row on desktop */
+		@media (min-width: 992px) {
+			.main-menu .navbar-nav {
+				flex-direction: row !important;
+				align-items: center !important;
+				flex-wrap: nowrap !important;
+			}
+			.main-menu .navbar-nav > .nav-item {
+				display: inline-flex !important;
+				align-items: center !important;
+				white-space: nowrap;
+			}
+			/* Keep dropdown submenus vertical */
+			.main-menu .navbar-nav > .nav-item > ul {
+				flex-direction: column !important;
+			}
+
+			/* Push nav links well away from the logo */
+			.main-menu {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: flex-end !important;
+				flex: 1;
+			}
+			.main-menu .nav-menu-wrapper {
+				margin-left: 80px !important;
+				flex: 1;
+				display: flex;
+				align-items: center;
+			}
+			.main-menu .navbar-nav {
+				margin-left: auto !important;
+			}
+		}
+
+		/* Push logo further left / away from nav links */
+		.navbar-brand {
+			margin-right: 0 !important;
+			padding-right: 0 !important;
+		}
+		@media (min-width: 992px) {
+			.main-menu .nav-menu-wrapper {
+				margin-left: 120px !important;
+			}
+		}
+
+		/* Force Get Started button text to stay horizontal */
+		.header-btn .btn-default {
+			writing-mode: horizontal-tb !important;
+			text-orientation: mixed !important;
+			white-space: nowrap !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			flex-direction: row !important;
+			letter-spacing: normal !important;
+		}
+
+		/* Fix nav dropdowns so long items never overflow the box */
+		@media (min-width: 992px) {
+			.main-menu .navbar-nav > .nav-item.submenu > ul {
+				min-width: 280px !important;
+				width: auto !important;
+				max-width: 340px !important;
+				white-space: normal !important;
+			}
+			.main-menu .navbar-nav > .nav-item.submenu > ul li a {
+				white-space: normal !important;
+				word-break: normal !important;
+				overflow-wrap: break-word !important;
+				display: block !important;
+				padding-top: 8px !important;
+				padding-bottom: 8px !important;
+				line-height: 1.4 !important;
+			}
+		}
+
+		/* =============================================
+		   HOME PAGE TEAM SECTION — 3×3 GRID SMALL CARDS
+		   ============================================= */
+
+		/* Ensure the entire section has a dark background */
+		.our-team {
+			background: #0d1128 !important;
+		}
+
+		.our-team .team-grid-home {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
+		}
+
+		.our-team .team-card-mini {
+			background: rgba(255,255,255,0.06);
+			border: 1px solid rgba(255,255,255,0.10);
+			border-radius: 16px;
+			overflow: hidden;
+			transition: transform 0.35s ease, box-shadow 0.35s ease;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.our-team .team-card-mini:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 20px 56px rgba(0,0,0,0.45);
+		}
+
+		/* -------------------------------------------------------
+		   IMAGE CONTAINER — DESKTOP: taller + face-focused
+		   ------------------------------------------------------- */
+		.our-team .team-card-mini .mini-img-wrap {
+			position: relative;
+			width: 100%;
+			/* Increased height on desktop so more of each person shows */
+			height: 280px;
+			overflow: hidden;
+			background: #1a1f3a;
+		}
+
+		.our-team .team-card-mini .mini-img-wrap img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* 
+			  "top" ensures faces/heads are always anchored to the top 
+			  of the container — nothing above the shoulders is cropped.
+			  We shift down slightly (30%) so the full face is centred
+			  rather than cut at the crown.
+			*/
+			object-position: center 25%;
+			display: block;
+			transition: transform 0.5s ease;
+		}
+
+		.our-team .team-card-mini:hover .mini-img-wrap img {
+			transform: scale(1.06);
+		}
+
+		/* Gradient overlay — kept shallow so it never covers the face */
+		.our-team .team-card-mini .mini-overlay {
+			position: absolute;
+			bottom: 0; left: 0; right: 0;
+			height: 30%;
+			background: linear-gradient(to top, rgba(10,15,40,0.68) 0%, transparent 100%);
+			pointer-events: none;
+		}
+
+		/* Social icons inside overlay */
+		.our-team .team-card-mini .mini-socials {
+			position: absolute;
+			bottom: 10px;
+			right: 12px;
+			display: flex;
+			gap: 6px;
+			opacity: 0;
+			transform: translateY(6px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			z-index: 6;
+		}
+
+		.our-team .team-card-mini:hover .mini-socials {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.our-team .team-card-mini .mini-socials a {
+			width: 30px;
+			height: 30px;
+			border-radius: 8px;
+			background: rgba(255,255,255,0.18);
+			backdrop-filter: blur(4px);
+			border: 1px solid rgba(255,255,255,0.28);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: 12px;
+			text-decoration: none;
+			transition: background 0.2s ease, border-color 0.2s ease;
+		}
+
+		.our-team .team-card-mini .mini-socials a:hover {
+			background: var(--primary-color, #e84917);
+			border-color: var(--primary-color, #e84917);
+		}
+
+		/* ===================================================
+		   CARD INFO AREA — solid dark background so text
+		   is ALWAYS visible regardless of page bg behind it
+		   =================================================== */
+		.our-team .team-card-mini .mini-info {
+			padding: 14px 16px 18px;
+			background: #111827; /* solid dark — never transparent */
+		}
+
+		.our-team .team-card-mini .mini-info h3 {
+			font-size: 15px;
+			font-weight: 700;
+			color: #ffffff !important;
+			margin: 0 0 5px;
+			line-height: 1.25;
+		}
+
+		.our-team .team-card-mini .mini-info p {
+			font-size: 12.5px;
+			color: rgba(255,255,255,0.62) !important;
+			margin: 0;
+			line-height: 1.4;
+		}
+
+		/* Clickable overlay for nav to team.html */
+		.our-team .team-card-mini .mini-link-overlay {
+			position: absolute;
+			inset: 0;
+			z-index: 5;
+		}
+
+		/* -------------------------------------------------------
+		   RESPONSIVE BREAKPOINTS
+		   ------------------------------------------------------- */
+
+		/* Large desktop: keep 3 columns, tall cards */
+		@media (min-width: 1200px) {
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 300px;
+			}
+		}
+
+		/* Medium / tablet landscape: 3 columns, slightly shorter */
+		@media (max-width: 1199px) and (min-width: 992px) {
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 260px;
+			}
+		}
+
+		/* Tablet portrait: 2 columns */
+		@media (max-width: 991px) {
+			.our-team .team-grid-home {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 18px;
+			}
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 220px;
+			}
+		}
+
+		/* Mobile: 2 columns, smaller image */
+		@media (max-width: 576px) {
+			.our-team .team-grid-home {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 12px;
+			}
+			.our-team .team-card-mini .mini-img-wrap {
+				height: 160px;
+			}
+			.our-team .team-card-mini .mini-info h3 {
+				font-size: 13px;
+			}
+			.our-team .team-card-mini .mini-info p {
+				font-size: 11px;
+			}
+		}
+	</style>
 </head>
 <body>
 
+    
     <!-- Preloader Start -->
 	<div class="preloader">
 		<div class="loading-container">
@@ -91,7 +356,7 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="./" style="display: flex; align-items: center; gap: 12px;">
-						<img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
+						<img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 50px; width: auto;">
 						<span style="font-size: 20px; font-weight: 700; color: #000; white-space: nowrap;">Maddy Group Ltd</span>
 					</a>
 					<!-- Logo End -->
@@ -102,7 +367,8 @@
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="./">Home</a></li>                                
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="services.html">Services</a>
+                                <!-- Services Dropdown -->
+                                <li class="nav-item submenu"><a class="nav-link" href="cybersecurity-services.html">Services</a>
                                     <ul>
                                         <li class="nav-item"><a class="nav-link" href="cybersecurity-services.html">Cybersecurity Services</a></li>
                                         <li class="nav-item"><a class="nav-link" href="software-development.html">Software Development</a></li>
@@ -110,6 +376,22 @@
                                         <li class="nav-item"><a class="nav-link" href="iot-services.html">IoT Services & Smart Cards</a></li>
                                         <li class="nav-item"><a class="nav-link" href="web-solutions.html">Web Solutions</a></li>
                                         <li class="nav-item"><a class="nav-link" href="ict-procurement.html">ICT Tools Procurement</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Technologies Dropdown -->
+                                <li class="nav-item submenu"><a class="nav-link" href="technologies.html">Technologies</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Security Assessment</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Penetration Testing as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Breach & Attack Simulation as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Phishing as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Vulnerability Management as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Identity as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Security Data Pipeline Services</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Insider Threat Solutions</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">CISO as a Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Data & Privacy Protection</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="technologies.html">Cloud Security</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -146,13 +428,7 @@
         <!-- Video Start -->
         <div class="hero-bg-video">
             <!-- Selfhosted Video Start -->
-            <video autoplay muted loop id="myVideo"><source src="https://demo.awaikenthemes.com/assets/videos/proshield-video.mp4" type="video/mp4"></video>
-            
-            <!-- Selfhosted Video End -->
-
-            <!-- Youtube Video Start -->
-            <!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
-            <!-- Youtube Video End -->
+            <video autoplay muted loop id="myVideo"><source src="images/cyber1.mp4" type="video/mp4"></video>
         </div>
         <!-- Video End -->
         <div class="container">
@@ -204,7 +480,7 @@
                         <!-- About Image Box Start -->
                         <div class="about-image-box about-img-1">
                             <figure class="image-anime reveal">
-                                <img src="images/about-image-1.jpg" alt="">
+                                <img src="images/dev6.jpg" alt="">
                             </figure>
                         </div>
                         <!-- About Image Box End -->
@@ -213,13 +489,13 @@
                         <div class="about-image-box">
                             <div class="about-img-2">
                                 <figure class="image-anime reveal">
-                                    <img src="images/about-image-2.jpg" alt="">
+                                    <img src="images/cyber1.jpg" alt="">
                                 </figure>
                             </div>
 
                             <div class="about-img-3">
                                 <figure class="image-anime reveal">
-                                    <img src="images/about-image-3.jpg" alt="">
+                                    <img src="images/cyber4.jpg" alt="">
                                 </figure>
                             </div>
                         </div>
@@ -252,7 +528,7 @@
                             <!-- About Us Body Image Start -->
                             <div class="about-us-body-img">
                                 <figure class="image-anime">
-                                    <img src="images/about-body-img.png" alt="">
+                                    <img src="images/dev1.jpg" alt="">
                                 </figure>
                             </div>
                             <!-- About Us Body Image End -->
@@ -309,197 +585,392 @@
     </div>
     <!-- About Us Section End -->
 
-    <!-- Zenduit Partnership Section Start -->
-<div class="zenduit-partnership" style="padding: 40px 0 80px 0; background: #fff; position: relative; overflow: hidden;">
+    <!-- Exclusive Partnerships Carousel Section Start -->
+<div class="exclusive-partnerships-section" style="padding: 40px 0 80px 0; background: #fff;">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <!-- Zenduit Video Start -->
-                <div class="zenduit-video-box wow fadeInLeft" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
-                    <!-- Updated video tag for mobile autoplay -->
-                    <video id="zenduit-video" playsinline autoplay muted loop style="width: 100%; height: auto; display: block; border-radius: 20px;">
-                        <source src="images/zenduit.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); pointer-events: none;"></div>
+        <!-- Section Title Start -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title" style="text-align: left; margin-bottom: 40px;">
+                    <h3 class="wow fadeInUp">partnerships</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Our Trusted <span>Partners</span></h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.4s">Exclusive partnerships bringing world-class solutions to African businesses.</p>
                 </div>
-                <!-- Zenduit Video End -->
             </div>
+        </div>
+        <!-- Section Title End -->
 
-            <div class="col-lg-6">
-                <!-- Zenduit Content Start -->
-                <div class="zenduit-content wow fadeInRight" style="padding-left: 40px;">
-                    <!-- Partnership Badge Start -->
-                    <div class="partnership-badge" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 12px 24px; border-radius: 50px; margin-bottom: 20px;">
-                        <span style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #fff;">Exclusive Partnership</span>
-                    </div>
-                    <!-- Partnership Badge End -->
-
-                    <!-- Section Title Start - Aligned left on mobile -->
-                    <div class="section-title" style="text-align: left;">
-                        <h3 class="wow fadeInUp">zenDUiT partnership</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">
-                            The Only Approved <span>Partner in Africa</span>
-                        </h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.4s" style="text-align: left;">
-                            Proud to be the exclusive <strong>zenDUiT</strong> partner across the entire African continent. We bring cutting-edge technology solutions and unparalleled expertise to businesses throughout Africa.
-                        </p>
-                    </div>
-                    <!-- Section Title End -->
-
-                    <!-- Partnership Features Start -->
-                    <div class="partnership-features wow fadeInUp" data-wow-delay="0.6s">
-                        <!-- About Footer List Start -->
-                        <div class="about-footer-list" style="text-align: left;">
-                            <ul>
-                                <li>Exclusive African Partnership</li>
-                                <li>Certified zenDUiT Solutions</li>
-                                <li>Continental Coverage & Support</li>
-                            </ul>
+        <!-- Partnership Carousel Start -->
+        <div class="partnership-carousel-wrapper">
+            <!-- Zenduit Slide -->
+            <div class="partnership-slide active" id="zenduit-slide">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="partnership-media-box wow fadeInLeft">
+                            <video playsinline autoplay muted loop>
+                                <source src="images/zenduit.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
-                        <!-- About Footer List End -->
                     </div>
-                    <!-- Partnership Features End -->
 
-                    <!-- Zenduit Buttons Start -->
-                    <div class="zenduit-buttons wow fadeInUp" data-wow-delay="0.8s" style="display: flex; gap: 16px; align-items: center; margin-top: 30px; justify-content: flex-start;">
-                        <a href="zenduit.html" class="btn-default">learn more</a>
-                        <a href="contact.html" class="btn-default">contact us</a>
+                    <div class="col-lg-6">
+                        <div class="partnership-content wow fadeInRight">
+                            <div class="partnership-badge">
+                                <span>Exclusive Partnership</span>
+                            </div>
+
+                            <div class="section-title" style="text-align: left;">
+                                <h3 style="font-size: 16px; margin-bottom: 12px;">zen partnership</h3>
+                                <h2 style="font-size: 32px; line-height: 1.3; margin-bottom: 16px;" data-cursor="-opaque">
+                                    The Only Approved <span>Partner in Africa</span>
+                                </h2>
+                                <p style="font-size: 15px; line-height: 1.6; text-align: left; margin-bottom: 20px;">
+                                    Proud to be the exclusive <strong>zen</strong> partner across the entire African continent. We bring cutting-edge fleet management solutions to businesses throughout Africa.
+                                </p>
+                            </div>
+
+                            <div class="partnership-features" style="margin-bottom: 24px;">
+                                <div class="about-footer-list" style="text-align: left;">
+                                    <ul style="font-size: 14px;">
+                                        <li>Exclusive African Partnership</li>
+                                        <li>Certified zen Solutions</li>
+                                        <li>Continental Coverage & Support</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="partnership-buttons">
+                                <a href="zenduit.html" class="btn-default">learn more</a>
+                                <a href="contact.html" class="btn-default">contact us</a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Zenduit Buttons End -->
                 </div>
-                <!-- Zenduit Content End -->
             </div>
+
+            <!-- CardLogix Slide -->
+            <div class="partnership-slide" id="cardlogix-slide">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="partnership-media-box wow fadeInLeft">
+                            <img src="images/BIOSID.jpg" alt="CardLogix Partnership">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="partnership-content wow fadeInRight">
+                            <div class="partnership-badge">
+                                <span>Partnership</span>
+                            </div>
+
+                            <div class="section-title" style="text-align: left;">
+                                <h3 style="font-size: 16px; margin-bottom: 12px;">CLX partnership</h3>
+                                <h2 style="font-size: 32px; line-height: 1.3; margin-bottom: 16px;" data-cursor="-opaque">
+                                    Leading <span>Smart Card Solutions</span>
+                                </h2>
+                                <p style="font-size: 15px; line-height: 1.6; text-align: left; margin-bottom: 20px;">
+                                    Exclusive <strong>CLX</strong> partner delivering advanced smart card technology, secure authentication, and access control solutions across Africa.
+                                </p>
+                            </div>
+
+                            <div class="partnership-features" style="margin-bottom: 24px;">
+                                <div class="about-footer-list" style="text-align: left;">
+                                    <ul style="font-size: 14px;">
+                                        <li>Smart Card Technology</li>
+                                        <li>Secure Authentication Systems</li>
+                                        <li>Access Control Solutions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="partnership-buttons">
+                                <a href="cardlogix.html" class="btn-default">learn more</a>
+                                <a href="contact.html" class="btn-default">contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zaelet Slide -->
+            <div class="partnership-slide" id="zaelet-slide">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="partnership-media-box wow fadeInLeft">
+                            <img src="images/instruments.jpg" alt="Zaelet Precision Partnership">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="partnership-content wow fadeInRight">
+                            <div class="partnership-badge">
+                                <span>Exclusive Partnership</span>
+                            </div>
+
+                            <div class="section-title" style="text-align: left;">
+                                <h3 style="font-size: 16px; margin-bottom: 12px;">Zaelet partnership</h3>
+                                <h2 style="font-size: 32px; line-height: 1.3; margin-bottom: 16px;" data-cursor="-opaque">
+                                    Africa's Most Affordable <span>Geospatial Solutions</span>
+                                </h2>
+                                <p style="font-size: 15px; line-height: 1.6; text-align: left; margin-bottom: 20px;">
+                                    Exclusive <strong>Zaelet Precision</strong> partner delivering high-quality surveying instruments and geospatial technology at unbeatable prices across Africa.
+                                </p>
+                            </div>
+
+                            <div class="partnership-features" style="margin-bottom: 24px;">
+                                <div class="about-footer-list" style="text-align: left;">
+                                    <ul style="font-size: 14px;">
+                                        <li>GNSS Receivers & Total Stations</li>
+                                        <li>Affordable Prices </li>
+                                        <li>Professional Surveying Equipment</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="partnership-buttons">
+                                <a href="zaelet.html" class="btn-default">learn more</a>
+                                <a href="contact.html" class="btn-default">contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Partnership Carousel End -->
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators-custom">
+            <button class="indicator-dot active" data-slide="zenduit-slide"></button>
+            <button class="indicator-dot" data-slide="cardlogix-slide"></button>
+            <button class="indicator-dot" data-slide="zaelet-slide"></button>
         </div>
     </div>
 </div>
-<!-- Zenduit Partnership Section End -->
+<!-- Exclusive Partnerships Carousel Section End -->
 
 <style>
-    /* Responsive fixes for Zenduit section */
+    /* Partnership Section Styling */
+    .partnership-slide {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .partnership-slide.active {
+        display: block;
+        opacity: 1;
+        animation: fadeInSlide 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeInSlide {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .partnership-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 10px 20px;
+        border-radius: 50px;
+        margin-bottom: 16px;
+    }
+    
+    .partnership-badge span {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #fff;
+    }
+    
+    .partnership-content {
+        padding-left: 40px;
+    }
+    
+    .partnership-buttons {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    /* Carousel Indicators */
+    .carousel-indicators-custom {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    
+    .indicator-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ddd;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+    
+    .indicator-dot.active {
+        background: #667eea !important;
+        width: 30px !important;
+        border-radius: 6px !important;
+    }
+    
+    .indicator-dot:hover {
+        background: #667eea;
+        opacity: 0.7;
+    }
+
+    /* Fixed container styling for both media boxes */
+    .partnership-media-box {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        height: 400px !important;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .partnership-media-box video,
+    .partnership-media-box img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 16px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 991px) {
-        .zenduit-content {
+        .partnership-content {
             padding-left: 0 !important;
-            padding-top: 40px;
-            text-align: left !important;
+            padding-top: 30px;
         }
         
-        .zenduit-partnership .section-title {
-            text-align: left !important;
+        .exclusive-partnerships-section {
+            padding: 30px 0 60px 0 !important;
         }
-        
-        .zenduit-partnership .section-title p {
-            text-align: left !important;
-        }
-        
-        .zenduit-buttons {
-            justify-content: flex-start !important;
-            flex-wrap: wrap;
+
+        .partnership-media-box {
+            height: 300px !important;
         }
     }
     
     @media (max-width: 767px) {
-        .zenduit-partnership {
-            padding: 30px 0 50px 0 !important;
+        .partnership-content h2 {
+            font-size: 26px !important;
         }
         
-        .zenduit-content {
-            padding-top: 30px;
-        }
-        
-        .partnership-badge {
-            padding: 10px 20px !important;
-        }
-        
-        .partnership-badge span {
-            font-size: 12px !important;
-            letter-spacing: 1px !important;
-        }
-        
-        .zenduit-buttons {
-            flex-direction: row;
+        .partnership-buttons {
+            flex-direction: row !important;
             flex-wrap: wrap;
-            gap: 12px !important;
         }
         
-        /* Keep button size consistent - don't make them full width */
-        .zenduit-buttons .btn-default {
-            width: auto !important;
-            margin-bottom: 0 !important;
+        .partnership-buttons .btn-default {
             flex: 0 0 auto;
+            min-width: 140px;
         }
-    }
-    
-    @media (max-width: 576px) {
-        .zenduit-buttons {
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px !important;
-        }
-        
-        .zenduit-buttons .btn-default {
-            padding: 12px 24px !important;
-            font-size: 14px !important;
-            min-width: 140px !important;
-        }
-    }
-    
-    /* Ensure arrow stays at far end on all screens */
-    .zenduit-buttons .btn-default {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: space-between;
-        white-space: nowrap;
-    }
-    
-    /* Video autoplay fix for mobile */
-    #zenduit-video {
-        -webkit-playsinline: true;
-        playsinline: true;
-        object-fit: cover;
-    }
-    
-    /* Ensure video plays on mobile */
-    @media (max-width: 768px) {
-        #zenduit-video {
-            height: 300px;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        #zenduit-video {
-            height: 250px;
+
+        .partnership-media-box {
+            height: 250px !important;
         }
     }
 </style>
 
 <script>
-    // Force video autoplay on mobile
+    // Enhanced Partnership Carousel - faster interval for consistent speed on all devices
     document.addEventListener('DOMContentLoaded', function() {
-        var video = document.getElementById('zenduit-video');
+        const slides = document.querySelectorAll('.partnership-slide');
+        const indicators = document.querySelectorAll('.indicator-dot');
+        let currentSlide = 0;
+        let autoRotateInterval;
+        const CAROUSEL_INTERVAL = 2000;
         
-        // Check if video exists
-        if (video) {
-            // Ensure video has necessary attributes for mobile autoplay
-            video.setAttribute('playsinline', '');
-            video.setAttribute('webkit-playsinline', '');
-            video.setAttribute('muted', '');
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
             
-            // Try to play the video
-            var playPromise = video.play();
+            void slides[index].offsetWidth;
             
-            // If autoplay fails, try again with user gesture
-            if (playPromise !== undefined) {
-                playPromise.catch(function(error) {
-                    // Autoplay failed, wait for user interaction
-                    document.addEventListener('click', function() {
-                        video.play().catch(function(e) {
-                            console.log("Autoplay prevented:", e);
-                        });
-                    }, { once: true });
-                });
-            }
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            setTimeout(() => {
+                const activeSlide = slides[index];
+                const mediaBox = activeSlide.querySelector('.partnership-media-box');
+                const content = activeSlide.querySelector('.partnership-content');
+                
+                if (mediaBox) {
+                    mediaBox.style.opacity = '1';
+                    mediaBox.style.visibility = 'visible';
+                }
+                
+                if (content) {
+                    content.style.opacity = '1';
+                    content.style.visibility = 'visible';
+                }
+                
+                const video = activeSlide.querySelector('video');
+                if (video) {
+                    video.play().catch(e => console.log('Video autoplay prevented:', e));
+                }
+            }, 50);
         }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function startAutoRotate() {
+            autoRotateInterval = setInterval(nextSlide, CAROUSEL_INTERVAL);
+        }
+        
+        function stopAutoRotate() {
+            clearInterval(autoRotateInterval);
+        }
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function() {
+                stopAutoRotate();
+                currentSlide = index;
+                showSlide(currentSlide);
+                setTimeout(() => {
+                    startAutoRotate();
+                }, 100);
+            });
+        });
+        
+        showSlide(0);
+        startAutoRotate();
+        
+        const carouselWrapper = document.querySelector('.partnership-carousel-wrapper');
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
+            carouselWrapper.addEventListener('mouseleave', startAutoRotate);
+        }
+        
+        window.addEventListener('load', function() {
+            showSlide(currentSlide);
+        });
     });
 </script>
     
@@ -566,7 +1037,7 @@
             </div>
         </div>
     </div>
-    <!-- Certifications & Badges Section End -->
+    <!--Certifications & Badges Section End -->
     
     <!-- Our Services Section Start -->
     <div class="our-services">
@@ -735,7 +1206,7 @@
                         <!-- Feature Image Start -->
                         <div class="feature-image">
                             <figure class="image-anime reveal">
-                                <img src="images/feature-image-1.jpg" alt="">
+                                <img src="images/dev7.jpg" alt="">
                             </figure>
                         </div>
                         <!-- Feature Image End -->
@@ -745,7 +1216,7 @@
                             <!-- Feature Image Start -->
                             <div class="feature-image">
                                 <figure class="image-anime reveal">
-                                    <img src="images/feature-image-2.jpg" alt="">
+                                    <img src="images/cyber2.jpg" alt="">
                                 </figure>
                             </div>
                             <!-- Feature Image End -->
@@ -764,7 +1235,7 @@
                                     <!-- Client Image Start -->
                                     <div class="client-image">
                                         <figure class="image-anime">
-                                            <img src="images/client-image-1.jpg" alt="">
+                                            <img src="images/client1.jpg" alt="">
                                         </figure>
                                     </div>
                                     <!-- Client Image End -->
@@ -772,7 +1243,7 @@
                                     <!-- Client Image Start -->
                                     <div class="client-image">
                                         <figure class="image-anime">
-                                            <img src="images/client-image-2.jpg" alt="">
+                                            <img src="images/client2.jpg" alt="">
                                         </figure>
                                     </div>
                                     <!-- Client Image End -->
@@ -780,7 +1251,7 @@
                                     <!-- Client Image Start -->
                                     <div class="client-image">
                                         <figure class="image-anime">
-                                            <img src="images/client-image-3.jpg" alt="">
+                                            <img src="images/client3.jpg" alt="">
                                         </figure>
                                     </div>
                                     <!-- Client Image End -->
@@ -882,7 +1353,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-1.jpg" alt="">
+                                            <img src="images/cyber3.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -898,7 +1369,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-2.jpg" alt="">
+                                            <img src="images/dev7.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -914,7 +1385,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-3.jpg" alt="">
+                                            <img src="images/dev5.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -930,7 +1401,7 @@
                                 <div class="project-image">
                                     <a href="contact.html" data-cursor-text="Contact">
                                         <figure class="image-anime">
-                                            <img src="images/project-4.jpg" alt="">
+                                            <img src="images/dev2.jpg" alt="">
                                         </figure>
                                     </a>
                                 </div>
@@ -955,131 +1426,6 @@
         </div>
     </div>
     <!-- Our Projects Section End -->
-
-    <!-- Why Choose Us Section Start -->
-    <div class="why-choose-us">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <!-- Why Choose Image Start -->
-                    <div class="why-choose-image">
-                        <figure class="image-anime reveal">
-                            <img src="images/why-choose-image.jpg" alt="">
-                        </figure>
-                    </div>
-                    <!-- Why Choose Image End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Why Choose Content Start -->
-                    <div class="why-choose-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title dark-section">
-                            <h3 class="wow fadeInUp">why choose us</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Reliable solutions for technology excellence</h2>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- Why Choose List Start -->
-                        <div class="why-choose-list">
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-1.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>expertise and experience</h3>
-                                    <p>A team of seasoned technology professionals with extensive industry knowledge.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-2.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>proactive security approach</h3>
-                                    <p>Focused on preventing threats before they impact your system, not just reacting after the fact.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-
-                            <!-- Why Choose Item Start -->
-                            <div class="why-choose-item wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="icon-box">
-                                    <img src="images/icon-why-choose-3.svg" alt="">
-                                </div>
-                                <div class="why-choose-item-content">
-                                    <h3>tailored training programs</h3>
-                                    <p>Educating your team on security best practices to reduce human error and enhance vigilance.</p>
-                                </div>
-                            </div>
-                            <!-- Why Choose Item End -->
-                        </div>
-                        <!-- Why Choose List End -->
-                    </div>
-                    <!-- Why Choose Content End -->
-                </div>
-
-                <div class="col-lg-12">
-                    <!-- Why Choose Counter List Start -->
-                    <div class="why-choose-counter-list">
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-1.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">25</span>+</h3>
-                                <p>Years Experience</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-2.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">15</span>K</h3>
-                                <p>project complete</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-3.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">16</span>K</h3>
-                                <p>customer happy</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-
-                        <!-- Why Choose Counter Item Start -->
-                        <div class="why-choose-counter-item">
-                            <div class="icon-box">
-                                <img src="images/icon-why-choose-counter-4.svg" alt="">
-                            </div>
-                            <div class="why-choose-counter-content">
-                                <h3><span class="counter">120</span></h3>
-                                <p>winning awards</p>
-                            </div>
-                        </div>
-                        <!-- Why Choose Counter Item End -->
-                    </div>
-                    <!-- Why Choose Counter List End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Why Choose Us Section End -->
 
     <!-- Technology Partners Section Start -->
     <div class="technology-partners">
@@ -1190,7 +1536,7 @@
                         <!-- Security Image Start -->
                         <div class="security-image order-lg-1 order-2">
                             <figure class="image-anime reveal">
-                                <img src="images/our-security-image.jpg" alt="">
+                                <img src="images/identity.webp" alt="">
                             </figure>
                         </div>
                         <!-- Security Image End -->
@@ -1256,7 +1602,6 @@
                         <!-- Pricing Header Start -->
                         <div class="pricing-header">
                             <h3>Security Assessment</h3>
-                            <!-- <h2>Call for Quote</h2> -->
                             <p>Comprehensive security evaluation and recommendations.</p>
 
                             <div class="icon-box">
@@ -1295,7 +1640,6 @@
                         <!-- Pricing Header Start -->
                         <div class="pricing-header">
                             <h3>Managed SOC Services</h3>
-                            <!-- <h2>Call for Quote</h2> -->
                             <p>24/7 security monitoring and threat response.</p>
 
                             <div class="icon-box">
@@ -1334,7 +1678,6 @@
                         <!-- Pricing Header Start -->
                         <div class="pricing-header">
                             <h3>Virtual CISO</h3>
-                            <!-- <h2>Call for Quote</h2> -->
                             <p>Strategic cybersecurity leadership and governance.</p>
 
                             <div class="icon-box">
@@ -1383,17 +1726,6 @@
     </div>
     <!-- Our Pricing Section End -->
 
-    <!-- 
-    COMMENTED OUT ORIGINAL PRICING WITH SPECIFIC AMOUNTS:
-    
-    Original pricing was:
-    - Security Assessment: GH₵2,500/assessment
-    - Managed SOC Services: GH₵8,500/per month  
-    - Virtual CISO: GH₵12,000/per month
-    
-    Now changed to "Call for Quote" for all services
-    -->
-
     <!-- Our Testimonials Section Start -->
     <div class="our-testimonials">
         <div class="container">
@@ -1425,65 +1757,74 @@
                             <div class="testimonial-slider">
                                 <div class="swiper">
                                     <div class="swiper-wrapper" data-cursor-text="Drag">
-                                        <!-- Testimonial Slide Start -->
+                                        <!-- Testimonial Slide 1 -->
                                         <div class="swiper-slide">
                                             <div class="testimonial-item">
                                                 <div class="testimonial-header">
                                                     <div class="testimonial-company-logo">
-                                                        <img src="images/athena-logo.svg" alt="Athena Technologies">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="160" height="44" aria-label="Irotech Solutions Ltd">
+                                                            <defs>
+                                                                <linearGradient id="iroGradT1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                                    <stop offset="0%" style="stop-color:#1a3a6b;stop-opacity:1"/>
+                                                                    <stop offset="100%" style="stop-color:#0d6efd;stop-opacity:1"/>
+                                                                </linearGradient>
+                                                            </defs>
+                                                            <path d="M10 8 L30 4 L50 8 L50 28 Q50 42 30 50 Q10 42 10 28 Z" fill="url(#iroGradT1)" opacity="0.9"/>
+                                                            <path d="M20 22 L27 30 L40 18" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                                            <text x="60" y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" fill="#1a3a6b" letter-spacing="0.5">IROTECH</text>
+                                                            <text x="60" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="500" fill="#0d6efd" letter-spacing="2">SOLUTIONS LTD</text>
+                                                            <line x1="60" y1="44" x2="160" y2="44" stroke="#0d6efd" stroke-width="1" opacity="0.4"/>
+                                                            <text x="60" y="54" font-family="'Segoe UI', Arial, sans-serif" font-size="7.5" font-weight="400" fill="#666" letter-spacing="1">CYBER · INFRASTRUCTURE · INNOVATION</text>
+                                                        </svg>
                                                     </div>        
                                                     <div class="testimonial-quote">
                                                         <img src="images/testimonial-quote.svg" alt="">
                                                     </div>
                                                 </div>                               
                                                 <div class="testimonial-content">
-                                                    <p>"Maddy Group Ltd transformed our cybersecurity posture completely. Their penetration testing revealed critical vulnerabilities we never knew existed. Kenneth and his team provided exceptional guidance throughout the remediation process."</p>
-                                                    <p>"As a leading Ghanaian technology company, we needed world-class security. Maddy Group's 24/7 SOC monitoring gives us peace of mind knowing our systems are protected around the clock."</p>
+                                                    <p>"Maddy Group has been instrumental in strengthening our security operations, from infrastructure hardening to incident response. Their expertise, responsiveness, and ability to deliver practical solutions have significantly improved our system stability and threat visibility."</p>
                                                 </div>
                                                 <div class="testimonial-body">
                                                     <div class="author-image">
                                                         <figure class="image-anime">
-                                                            <img src="images/author-1.jpg" alt="">
+                                                            <img src="images/testi1.jpg" alt="Liam Anderson">
                                                         </figure>
                                                     </div>
                                                     <div class="author-content">
-                                                        <h3>Razak Mohammed</h3>
-                                                        <p>CTO, Athena Technologies</p>
+                                                        <h3>Liam Anderson</h3>
+                                                        <p>Managing Director, Irotech Solutions Ltd</p>
                                                     </div>   
                                                 </div>                                    
                                             </div>
                                         </div>
-                                        <!-- Testimonial Slide End -->
 
-                                        <!-- Testimonial Slide Start -->
+                                        <!-- Testimonial Slide 2 -->
                                         <div class="swiper-slide">
                                             <div class="testimonial-item">
                                                 <div class="testimonial-header">
                                                     <div class="testimonial-company-logo">
-                                                        <img src="images/goldcoast-financial-logo.svg" alt="Gold Coast Financial Services">
+                                                        <img src="images/kono tech logo.png" alt="KONO Technology Systems LLC" style="max-height:50px; width:auto; object-fit:contain;">
                                                     </div>        
                                                     <div class="testimonial-quote">
                                                         <img src="images/testimonial-quote.svg" alt="">
                                                     </div>
                                                 </div>                               
                                                 <div class="testimonial-content">
-                                                    <p>"When we suffered a ransomware attack, Maddy Group's incident response team was on-site within hours. Their digital forensics expertise helped us recover completely and implement stronger defenses."</p>
-                                                    <p>"The compliance audit they conducted helped us achieve ISO 27001 certification. Their understanding of both international standards and local Ghanaian business needs is unmatched."</p>
+                                                    <p>"Maddy Group consistently delivers exceptional cybersecurity and infrastructure support. Their structured approach to risk management and clear, actionable guidance have strengthened our systems and improved our operational resilience."</p>
                                                 </div>
                                                 <div class="testimonial-body">
                                                     <div class="author-image">
                                                         <figure class="image-anime">
-                                                            <img src="images/author-2.jpg" alt="">
+                                                            <img src="images/testi2.jpeg" alt="Solomon Wab">
                                                         </figure>
                                                     </div>
                                                     <div class="author-content">
-                                                        <h3>Ama Serwah Nerquaye-Tetteh</h3>
-                                                        <p>Head of IT Security, Gold Coast Financial Services</p>
+                                                        <h3>Solomon Wab</h3>
+                                                        <p>Head of IT Security, KONO Technology Systems LLC</p>
                                                     </div>   
                                                 </div>                                    
                                             </div>
                                         </div>
-                                        <!-- Testimonial Slide End -->
                                     </div>
                                     <div class="testimonial-btn">
                                         <div class="testimonial-button-prev"></div>
@@ -1493,7 +1834,7 @@
                             </div>
                             <!-- Testimonial Slide End -->
 
-                            <!-- Testimnoial Contact Info Start -->
+                            <!-- Testimonial Contact Info Start -->
                             <div class="testimonial-contact-info">
                                 <!-- Testimonial Contact Box Start -->
                                 <div class="testimonial-contact-box">
@@ -1512,7 +1853,7 @@
                                 </div>
                                 <!-- Testimonial Contact Button End -->
                             </div>
-                            <!-- Testimnoial Contact Info End -->
+                            <!-- Testimonial Contact Info End -->
                         </div>
                         <!-- Testimonial Slide Box End -->
                     </div>
@@ -1523,7 +1864,7 @@
     </div>
     <!-- Our Testimonials Section End -->
 
-    <!-- Our Team Section Start -->
+    <!-- Our Team Section Start — 3×3 mini-card grid -->
     <div class="our-team">
         <div class="container">
             <div class="row section-row">
@@ -1531,143 +1872,132 @@
                     <!-- Section Title Start -->
                     <div class="section-title dark-section">
                         <h3 class="wow fadeInUp">Expert team</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Our expert team member</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s" data-cursor="-opaque">Our expert team members</h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/team-1.jpg" alt="">
-                                </figure>
-                            </a>
+                <div class="col-lg-12">
+                    <!-- 3×3 mini-card grid -->
+                    <div class="team-grid-home wow fadeInUp" data-wow-delay="0.3s">
 
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
+                        <!-- 1. Dunstan Guba -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Dunstan Guba's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/team-1.jpg" alt="Dunstan Guba">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
                             </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Dunstan Guba</a></h3>
-                            <p>VAPT/Digital Forensic Expert</p>
-                        </div>
-                        <!-- Team Content End -->
-                    </div>
-                    <!-- Team Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/team-1.webp" alt="">
-                                </figure>
-                            </a>
-
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
+                            <div class="mini-info">
+                                <h3>Dunstan Guba</h3>
+                                <p>VAPT / Digital Forensic Expert</p>
                             </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">Fredrick Agyare</a></h3>
-                            <p>Cloud Engineer</p>
                         </div>
-                        <!-- Team Content End -->
-                    </div>
-                    <!-- Team Item End -->
-                </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/team-3.jpg" alt="">
-                                </figure>
-                            </a>
-
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
+                        <!-- 2. Agyare Fredrick -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Agyare Fredrick's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/fred.webp" alt="Agyare Fredrick">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
                             </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">michael brown</a></h3>
-                            <p>incident response</p>
-                        </div>
-                        <!-- Team Content End -->
-                    </div>
-                    <!-- Team Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Item Start -->
-                    <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-                        <!-- Team Image Start -->
-                        <div class="team-image">
-                            <a href="team-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/team-4.jpg" alt="">
-                                </figure>
-                            </a>
-
-                            <!-- Team Social Icon Start -->
-                            <div class="team-social-icon">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
+                            <div class="mini-info">
+                                <h3>Agyare Fredrick</h3>
+                                <p>Cloud Engineer</p>
                             </div>
-                            <!-- Team Social Icon End -->
-                        </div>	
-                        <!-- Team Image End -->
-
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="team-single.html">isabella moore</a></h3>
-                            <p>security awareness</p>
                         </div>
-                        <!-- Team Content End -->
+
+                        <!-- 3. Godwin Mensah -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Godwin Mensah's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/rams1.jpg" alt="Godwin Mensah">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Godwin Mensah</h3>
+                                <p>DevOps Engineer</p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Ebenezer Kwafo -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Ebenezer Kwafo's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/eben2.png" alt="Ebenezer Kwafo">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Ebenezer Kwafo</h3>
+                                <p>Incidence Response Specialist</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Pearl Agyekum -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Pearl Agyekum's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/pearl2.png" alt="Pearl Agyekum">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Pearl Agyekum</h3>
+                                <p>Product Manager</p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Richard Acheampong -->
+                        <div class="team-card-mini">
+                            <a href="team.html" class="mini-link-overlay" aria-label="View Richard Acheampong's profile"></a>
+                            <div class="mini-img-wrap">
+                                <img src="images/team5.jpg" alt="Richard Acheampong">
+                                <div class="mini-overlay"></div>
+                                <div class="mini-socials">
+                                    <a href="#" aria-label="Twitter" onclick="event.stopPropagation();"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook" onclick="event.stopPropagation();"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram" onclick="event.stopPropagation();"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="mini-info">
+                                <h3>Richard Acheampong</h3>
+                                <p>Software / AI Engineer</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- Team Item End -->
+                    <!-- End team-grid-home -->
+
+                    <!-- View All Team CTA -->
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.5s" style="margin-top: 36px;">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -1722,7 +2052,7 @@
                         <!-- CTA Box Image Start -->
                         <div class="cta-box-image">
                             <figure class="image-anime reveal">
-                                <img src="images/cta-box-image.jpg" alt="">
+                                <img src="images/cyber16.jpg" alt="">
                             </figure>
                         </div>
                         <!-- CTA Box Image End -->
@@ -1751,7 +2081,7 @@
                         <!-- Faqs Image Start -->
                         <div class="faq-image">
                             <figure class="image-anime reveal">
-                                <img src="images/faq-image.jpg" alt="">
+                                <img src="images/cyber14.webp" alt="">
                             </figure>
                         </div>
                         <!-- Faqs Image End -->
@@ -1850,7 +2180,7 @@
                         <div class="post-featured-image">
                             <a href="blog-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/post-1.jpg" alt="">
+                                    <img src="images/cyber11.jpeg" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -1882,7 +2212,7 @@
                         <div class="post-featured-image">
                             <a href="blog-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/post-2.jpg" alt="">
+                                    <img src="images/cyber12.jpg" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -1914,7 +2244,7 @@
                         <div class="post-featured-image">
                             <a href="blog-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/post-3.jpg" alt="">
+                                    <img src="images/cyber15.jpg" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -1952,7 +2282,7 @@
                     <div class="footer-header">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;">
-                            <img src="images/maddylogo.jpg" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
+                            <img src="images/maddy logo with bg.png" alt="Maddy Group Ltd Logo" style="height: 60px; width: auto;">
                             <span style="font-size: 24px; font-weight: 700; color: #fff;">Maddy Group Ltd</span>
                         </div>
                         <!-- Footer Logo End -->
@@ -1993,8 +2323,9 @@
                         <ul>
                             <li><a href="index.html">home</a></li>
                             <li><a href="about.html">about us</a></li>
-                            <li><a href="services.html">services</a></li>
-                            <li><a href="blog-single.html">blog</a></li>
+                            <li><a href="cybersecurity-services.html">services</a></li>
+                            <li><a href="technologies.html">technologies</a></li>
+                            <li><a href="blog.html">blog</a></li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->
